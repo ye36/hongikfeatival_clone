@@ -12,14 +12,24 @@ class LostpostsController < ApplicationController
       else params[:goal] == "물건을 찾아요"
         @lostposts = Lostpost.where(:goal => params[:goal]).order('created_at DESC').page(params[:page]).per(8)
       end
+    elsif params[:group]
+      if params[:group] == "지갑"
+        @lostposts = Lostpost.where(:group => params[:group]).order('created_at DESC').page(params[:page]).per(8)
+      elsif params[:group] == "가방"
+        @lostposts = Lostpost.where(:group => params[:group]).order('created_at DESC').page(params[:page]).per(8)
+      elsif params[:group] == "휴대폰"
+        @lostposts = Lostpost.where(:group => params[:group]).order('created_at DESC').page(params[:page]).per(8)
+      else params[:group] == "기타"
+        @lostposts = Lostpost.where(:group => params[:group]).order('created_at DESC').page(params[:page]).per(8)        
+      end      
     else 
       if params[:search]
         if params[:selecto]=="1"
-        @posts = Lostpost.search1(params[:search]).order("created_at DESC").page(:page => params[:page]).per(8)
+          @lostposts = Lostpost.search1(params[:search]).order("created_at DESC").page(params[:page]).per(8)
         elsif params[:selecto]=="2"
-        @posts = Lostpost.search2(params[:search]).order("created_at DESC").page(:page => params[:page]).per(8)
+          @lostposts = Lostpost.search2(params[:search]).order("created_at DESC").page(params[:page]).per(8)
         elsif params[:selecto]=="3"
-        @posts = Lostpost.search3(params[:search]).order("created_at DESC").page(:page => params[:page]).per(8)
+          @lostposts = Lostpost.search3(params[:search]).order("created_at DESC").page(params[:page]).per(8)
         else
         end
       else

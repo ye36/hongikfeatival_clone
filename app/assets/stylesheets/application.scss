@@ -18,10 +18,10 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
 html *{
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
 }
 .navlink{
     display: flex;
@@ -54,7 +54,7 @@ html *{
 }
 .h-img{
     position: absolute;
-    width: auto;
+    width: 100%;
     height: 100%;
     top: 0;
     left: 50%;
@@ -82,7 +82,7 @@ html *{
     max-width: 980px;
     margin: auto;
     text-align: center;
-    margin-top: 5rem;
+    // margin-top: 5rem;
 }
 
 .h-logo{
@@ -97,43 +97,25 @@ html *{
 }
 a:hover{
     background-color: white;
+    color: black !important;
     text-decoration: none !important;
 }
-@media screen and (max-width:799px){
-    .navbar-light .navbar-toggler{
-        
-        color:white !important;
-    }
-    .navbar-toggler{
-        background:white;
-    }
-    .h-nav{
-        background-color: rgba(0,0,0,0.5)!important;
+.h-logo-img:hover{
+    background-color: black !important;
 
-    }
-    .h-menu-button{
-            color:white !important;
-    }
-    .h-logo{
-        width: 40%;
-    }
-    .h-logo-img{
-        width: 100%;
-    }
-    .h-main{
-        height: 30vh;
-        overflow: hidden;
-    }
-    .h-main-img{
-        height: auto;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
 }
+.collapsing{
+    position:static;
+}
+.collapse{
+  
+   
+}
+.h-logo:hover{
+    background-color: black !important;
+
+}
+
 .h-nav{
         background-color: rgba(0,0,0,0.5)!important;
 }
@@ -178,7 +160,7 @@ background: asset_url('home-01.png');
     perspective: 1050px;
 }
 .wrapperrn{
-background: asset_url('home-01.png');
+    background: asset_url('home-01.png');
 }
 #wrapperrn{
     height:1050px;
@@ -194,15 +176,17 @@ background: asset_url('home-01.png');
     -o-perspective: 1050px;
     perspective: 1050px;
 }
+.ban{
+    height: 350px;
+}
 .ban1{
-background: asset_url('home-05.png');
+    background: asset_url('banner-10.png');
 }
 
 .ban3{
-    background: asset_url('home-02.png');
+    background: asset_url('banner-09.png');
 }
 #ban1{
-    height:350px;
     background-size: cover;
     background-repeat: none;
     background-position: center;
@@ -217,10 +201,41 @@ background: asset_url('home-05.png');
     margin-bottom:20px;
 }
 .ban2{
-    background: asset_url('home-03.png');
+    background: asset_url('banner-08.png');
 }
+.ban4{background: asset_url('banner-01.png')}
+
+#ban4{
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-perspective: 400px;
+    -o-perspective: 400px;
+    perspective: 400px;
+    margin-bottom:20px;
+}
+
 #ban2{
-    height:350px;
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-perspective: 400px;
+    -o-perspective: 400px;
+    perspective: 400px;
+    margin-bottom:20px;
+}
+
+#ban3{
     background-size: cover;
     background-repeat: none;
     background-position: center;
@@ -235,16 +250,55 @@ background: asset_url('home-05.png');
     margin-bottom:20px;
 }
 .h_btn_sign_up {
-    color:white !important;
+    color:#8d53c4 !important;
 }
 .h-new-button {
-    border: 1px solid #8d53c4;
     padding: 10px;
-    border-radius: 5px;
+    //border-radius: 5px;//
+    background-color: #000000;
+    opacity: 0.5;
+    color:#ffffff;
+  }
+
+
+@media screen and (max-width:799px){
+    .navbar-light .navbar-toggler{
+        
+        color:white !important;
+    }
+    .navbar-toggler{
+        background:white;
+    }
+    .h-nav{
+        background-color: rgba(0,0,0,0.5)!important;
+
+    }
+    .h-menu-button{
+            color:white !important;
+    }
+    .h-logo{
+        width: 40%;
+    }
+    .h-logo-img{
+        width: 100%;
+    }
+    .h-main{
+        height: 30vh;
+        overflow: hidden;
+    }
+    .h-main-img{
+        height: auto;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .ban{
+        height: 200px;
+    }
+    
 }
-
-
-
 
 
 

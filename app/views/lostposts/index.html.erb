@@ -1,7 +1,7 @@
-<div class="navshower">
+<!--<div class="navshower">-->
   
-</div>
-<div class="ban1" id="ban1">
+<!--</div>-->
+<div class="ban1 ban" id="ban1">
     <div class="center-btn pushdown">
         <%= link_to new_lostpost_path, :class=>"newbtn" do %>
           게시글 작성하기
@@ -12,13 +12,18 @@
 <div class="container">
             <%= link_to label_tag("주인을 찾아요!"), lostposts_path(:goal => "주인을 찾아요") %>
             <%= link_to label_tag("물건을 찾아요!"), lostposts_path(:goal => "물건을 찾아요") %>
+            <hr>
+            <%= link_to label_tag("휴대폰"), lostposts_path(:group => "휴대폰") %>
+            <%= link_to label_tag("지갑"), lostposts_path(:group => "지갑") %>
+            <%= link_to label_tag("가방"), lostposts_path(:group => "가방") %>
+            <%= link_to label_tag("기타"), lostposts_path(:group => "기타") %>
         <table class="table" style="margin-top:50px;">
           <tbody>
             <% @lostposts.each do |post| %>
                 <tr>
                   <td class="fixratio" id="fixratio">
                       <%= link_to lostpost_path(post.id), :class=>"hoverer" do %> 
-                          <span class="korfont"><%=post.goal.truncate(43)%></span>
+                          <span class="korfont"><%=post.title.truncate(43)%></span>
                       <%end%>
                       <br>
                       <% if !post.user.blank? %>
@@ -45,7 +50,7 @@
     <%= form_tag(lostposts_path, :method => "get") do %>
         <div class="row">
             <div class="col-4 col-md-2" style="padding-right:5px">
-                <%= select_tag(:selecto, options_for_select({ "Title" => 1, "Content" => 2, "Title/Content" => 3},params[:selecto]), class:'korfont form-control form-control-sm')%>
+                <%= select_tag(:selecto, options_for_select({ "제목" => 1, "내용" => 2, "제목/내용" => 3},params[:selecto]), class:'korfont form-control form-control-sm')%>
             </div>
             <div class="col-5 col-md-3" style="padding-right:6px; padding-left:0px"><%= text_field_tag :search, params[:search],:id=>"textarea1", placeholder: "키워드를 입력해주세요" , class: 'korfont form-control form-control-sm'%></div>
             <div class="col-3 col-md-2" style="padding-left:0px"><%= button_tag "찾기", class: "btn btn-primary btn-sm korfont" %></div>
@@ -279,15 +284,19 @@ td{
       background-color:black;
     }
     .pushdown{
-      margin-top:250px;
+      /*margin-top:250px;*/
     }
     .newbtn{
+      position: absolute;
       font-size:21px;
       font-weight:bold;
       color:black;
       opacity:0.7;
       background-color:white;
       padding:5px;
+      top: 70%;
+      left: 50%;
+      transform: translateX(-50%);
     }
     .newbtn:hover{
       font-size:21px;

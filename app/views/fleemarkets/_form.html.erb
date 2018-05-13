@@ -1,64 +1,17 @@
-<%= form_for(@fleemarket) do |f| %>
-    
- 
-<div class="newflee">
-  <div class="field">
-    <%= label_tag :name ,'마켓이름을 적어주세요!' %><br>
-    <div class="hcategory"><%= f.text_field :name %></div>
-  </div>
-  
-  <div class="field">
-    <%= f.label :category, '상품종류를 적어주세요! (ex.악세서리, 도자기, 휴대폰케이스 등등)'%><br>
-    <div class="hcategory"><%= f.text_field :category %></div>
-  </div>
-  <div class="field">
-    <%= label_tag :time ,'운영시간 (ex.9:00 - 18:00)' %><br>
-    <div class="hprice"><%= f.text_field :time %></div>
-  </div>
-  
-  <div class="field">
-    <%= label_tag :price ,'가격대 (ex.0.5 - 2.0)' %><br>
-    <div class="hprice"><%= f.text_field :price %></div>
-  </div>
-  
-  <div class="field">
-    <%= label_tag :explain ,'마켓을 소개해주세요! (주최 학과, 제품 소개 등 자유롭게 적어주세요!' %><br>
-    <div class="htext"><%= f.text_area :explain %></div>
-  </div>
-  <div class="field">
-    <%= label_tag :location ,'마켓 위치를 간략하게 알려주세요! (ex.홍문관 옆길)' %><br>
-    <div class="hcategory"><%= f.text_field :location %></div>
-  </div> 
-  <div class="field">
-    <%= label_tag :mainimage ,'메인 이미지(대표 이미지를 첨부해주세요!)' %><br>
-    <%= f.file_field :mainimage %>
-  </div>
-  <div class="field">
-    <%= label_tag :image2 ,'부 이미지1' %><br>
-    <%= f.file_field :image2 %>
-  </div>
-  <div class="field">
-    <%= label_tag :image3 ,'부 이미지2' %><br>
-    <%= f.file_field :image3 %>
-  </div>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  </div>
-<% end %>
 
+<div style="margin-top: 100px; smargin-left: 350px; max-width: 600px; "
 <div class="container newlostform">
   <%= bootstrap_form_for @fleemarket do |f| %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.text_field :name, label: "마켓이름" %>
-      <%= f.text_field :category, label: "상품 종류" %>
-      <%= f.text_field :time,    label: "운영 시간", placeholder: "10:00 - 16:00"%>
-      <%= f.text_field :price, label: "가격대", placeholder: "0.5 - 2.0" %>
+      <%= f.text_field :category, label: "상품 종류", placeholder: "ex) 귀걸이, 도자기, 휴대폰케이스" %>
+      <%= f.text_field :time,    label: "운영 시간", placeholder: "ex) 10:00 - 16:00"%>
+      <%= f.text_field :price, label: "가격대", placeholder: "ex) 0.5 - 2.0" %>
       <%= f.text_area :explain, label: "마켓을 소개해주세요!"%>
-      <%= f.file_field :mainimage,label: "메인이미지", accept: 'image/png,image/gif,image/jpeg' %>
-      <%= f.file_field :image1,accept: 'image/png,image/gif,image/jpeg' %>
-      <%= f.file_field :image2,accept: 'image/png,image/gif,image/jpeg' %>
-      <%= f.submit %>
+      <%= f.file_field :mainimage,label: "메인이미지 선택!  ", accept: 'image/png,image/gif,image/jpeg' %>
+      <%= f.file_field :image2,label: "부 이미지1 선택!   " ,accept: 'image/png,image/gif,image/jpeg' %>
+      <%= f.file_field :image3,label: "부 이미지2 선택!  ",accept: 'image/png,image/gif,image/jpeg' %>
+      <button type="submit" class="btn btn-secondary">마켓등록</button>
   <% end %>
+</div>
 </div>

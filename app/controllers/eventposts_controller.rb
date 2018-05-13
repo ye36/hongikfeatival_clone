@@ -75,7 +75,7 @@ class EventpostsController < ApplicationController
       params.require(:eventpost).permit(:title, :host, :contents, :runtime, :location, :mainimage, :image2, :image3,:user_id)
     end
     def is_owner?
-        redirect_to @eventposts unless current_user == @eventpost.user
+        redirect_to @eventpost unless current_user == @eventpost.user
     end    
     def log_in? #로그인 해야 새로만들기 창 드르가게 해줄거야
         

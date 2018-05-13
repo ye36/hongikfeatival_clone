@@ -1,14 +1,16 @@
-<div class="navshower">
+
+<div class="ban2 ban" id="ban2">
+
   
+  <% if user_signed_in?%>
+    <%= link_to '게시글 작성하기', new_fleemarket_path, class: "newbtn" %>
+  <% else %>
+    <%= link_to '게시글 작성하기', new_user_session_path, class: "newbtn" %>
+  <% end %>
 </div>
-<div class="ban2" id="ban2"></div>
 
 <div class='h-container'>
   <p id="notice"><%= notice %></p>
-  
-  
-  
-  <br><br>
       <div class="row">
         <% @fleemarkets.each do |fleemarket| %>
           <div class="col-sm-12 col-md-6 col-xl-3 h-card">
@@ -22,7 +24,7 @@
                   <% end %>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title"><%= fleemarket.name %></h5>
+                  <h5 class="card-title" style="color:#b2b2b2;"><strong><%= fleemarket.name %></strong></h5>
                   <p class="card-text"><%= fleemarket.category %>/<%= fleemarket.price %></p>
                   <p class="card-text"><%= fleemarket.time %></p>
                 </div>
@@ -31,10 +33,9 @@
           </div>
         <% end %>
       </div>
-      <% if user_signed_in? %>
-    <%= link_to '마켓 등록', new_fleemarket_path %>
-    <% else %>
-    <%= link_to '마켓 등록', new_user_registration_path %>
-  <% end %>
-  
-</div>
+       <br><br>
+       
+      <%= paginate @fleemarkets, window: 2 %>
+      
+     <div style="margin: 80px;"></div>
+      

@@ -1,46 +1,137 @@
+
 <div class="row">
- <div class=" col-xl-3"></div>
- <div class="col-sm-12 col-xl-6"><img class='image1' src="<%= @fleemarket.mainimage.main %>"></div>
- <div class=" col-xl-3"></div>
-</div>    
+ <div class="card col-12" style=" background-color:#f9f9f9; margin-top: 50px; ">
+  <div class="card-body" style="border-bottom:1px solid #e0e0e0 ;    ">
+   <div class="row">
+    <div class=" col-xl-2"></div>
+    <div class="col-xs-12 col-xl-4"><img class='image1' src="<%= @fleemarket.mainimage.main %>"></div>
+
+    <div class=" col-xs-12 col-xl-5">
+     <p>
+      <div style="margin-top: 50px;"></div>
+      <div class="h-container">
+       <div style="border: 2px solid;">
+        <div class="j-line">
+        <%= @fleemarket.name %>
+       </div>
+       </div>
+       </div>
+      
+     </p>
    
-   
-   <p>
-     <div class="middlemargin"></div>
-      <font size="6"><%= @fleemarket.name %> </font>
-   </p>
-   
+     
+     <div style="padding:30px; margin-left:30px;">
     
-  <div class="middlemargin"></div>
-  <p>
-   <font size="3"> <strong>판매 제품  </strong>
+  <div class="row">
+   <div class="col col-xs-1 col-xl-3">
+    <font size="5"> <strong>판매 제품</strong>
+   </div>
+   <div class="col col-xs-9 col-xl-9">
     <%= @fleemarket.category %></font>
-  </p>
- 
-   <p>
-    <font size="3"><strong>운영 시간 </strong>
-    <%= @fleemarket.time %>
-  </p>
+   </div>
+  </div>
   
-  <p>
-      <font size="3"><strong>가격대  </strong>
-      <%= @fleemarket.price %></font>
-    </p> 
-   
-  <p>
-    <font size="3"><strong>소개</strong>
-    <%= @fleemarket.explain %></font>
-  </p>
+  <div class="row">
+   <div class="col col-xs-1 col-xl-3">
+    <font size="5"> <strong>운영 시간</strong>
+   </div>
+   <div class="col col-xs-9 col-xl-9">
+    <%= @fleemarket.time %></font>
+   </div>
+  </div>
   
-  <p>
-    <font size="3"><strong>위치  </strong>
+  <div class="row">
+   <div class="col col-sm-3 col-xl-3">
+     <font size="5"> <strong>가격대</strong>
+   </div>
+   <div class="col col-sm-9 col-xl-9">
+    <%= @fleemarket.price %></font>
+   </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col col-sm-3 col-xl-3">
+     <font size="5"> <strong>소개</strong>
+    </div>
+    <div class="col col-sm-9 col-xl-9">
+     <%= @fleemarket.explain %></font>
+    </div>
+  </div>
+  
+  <div class="row">
+   <div class="col col-sm-3 col-xl-3">
+   <font size="5"> <strong>위치</strong>
+   </div>
+   <div class="col col-sm-9 col-xl-9">
     <%= @fleemarket.location %></font>
-  </p>
+   </div>
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  
+  
+  
+</div> 
+</div>
+</div>
+
+<div class="middlemargin"></div>
+
+<div class="row">
+<div class="card col-12" style="margin-top:10px; background-color:#f9f9f9; padding:10px;">
+ <div class="card-body" style="border-bottom:1px solid #e0e0e0 ; ">
+
+<div class="h-container">
+<div class="j-line">
+    <div style="border: 2px solid;  ">
+    <strong>마켓사진</strong>
+    </div>
+    </div>
+</div>
+
+<div class="middlemargin"></div>
+<hr>
+
+<div class="row">
+     <div class=" col-xl-2"></div>
+  <% if @fleemarket.image2.main.present? %>
+      <div class="col-sm-12 col-xl-4 " >
+        <img class="image2" src="<%= @fleemarket.image2.main %>" />
+      </div>    
+    <% else %>
+    <% end %>
+    
+    <% if @fleemarket.image3.main.present? %>
+      <div class="col-sm-12 col-xl-4 " >
+        <img class="image3" src="<%= @fleemarket.image3.main %>" />
+      </div>    
+    <% else %>  
+    <% end %>
+    <div class=" col-xl-2"></div>
+    </div>
+    
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+    
+      
+ 
   
   <div class="middlemargin"></div>
-  
-  <%= link_to '수정하기', edit_fleemarket_path(@fleemarket) %> |
-  <%= link_to '뒤로가기', fleemarkets_path %>
+  <div style="text-align:center;">
+   <font size="4">
+   <%= link_to '삭제하기', fleemarket_path(@fleemarket), method:"delete"%> |
+   <%= link_to '수정하기', edit_fleemarket_path(@fleemarket) %> |
+   <%= link_to '뒤로가기', fleemarkets_path %>
+   </font>
+  </div> 
+  <div style="margin-bottom: 50px;"
 </div> 
 
 

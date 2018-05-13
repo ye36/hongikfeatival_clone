@@ -11,102 +11,22 @@
     </div>
   <% end %>
   
-  <!--<div class="row">-->
-    <!--<div class="ny_center">-->
-  <!--    <div class="col-sm-12 col-md-6  ">-->
-  <!--      <div class="field">-->
-  <!--        <p>이벤트명을 정해주세요!</p>-->
-          <!--<%= f.label :title %><br>-->
-  <!--        <%= f.text_field :title %>-->
-  <!--      </div>-->
-  <!--      <div class="field">-->
-  <!--        <p>어떤 컨셉인가요!?(ex.게임,푸드트럭,기타 ..)</p>-->
-          <!--<%= f.label :host %><br>-->
-  <!--        <%= f.text_field :host %>-->
-  <!--      </div>-->
-  <!--      <div class="field">-->
-  <!--        <p>이벤트에 관해 간단한 설명 부탁드려요!</p>-->
-          <!--<%= f.label :contents %><br>-->
-  <!--        <%= f.text_area :contents %>-->
-  <!--      </div>-->
-  <!--      <div class="field">-->
-  <!--        <p>운영시간은?!</p>-->
-          <!--<%= f.label :runtime %><br>-->
-  <!--        <%= f.text_field :runtime %>-->
-  <!--      </div>-->
-  <!--      <div class="field">-->
-  <!--        <p>위치가 어딘가요?알려주세요!</p>-->
-          <!--<%= f.label :location %><br>-->
-  <!--        <%= f.text_field :location %>-->
-  <!--      </div>-->
-        
-  <!--      <div class="field">-->
-  <!--        <p> 대표 사진 선택 </p>-->
-          <!--<%= f.label :mainimage %><br>-->
-  <!--        <%= f.file_field :mainimage, accept: 'image/png,image/gif,image/jpeg' %>-->
-  <!--      </div>-->
-        
-  <!--      <div class="field">-->
-  <!--        <p>세부 사진 선택!!(ex.메뉴판,판넬사진 기타..)</p>-->
-          <!--<%= f.label :image2 %><br>-->
-  <!--        <%= f.file_field :image2, accept: 'image/png,image/gif,image/jpeg' %>-->
-  <!--      </div>-->
-        
-  <!--      <div class="field">-->
-  <!--        <p>세부 사진 선택 하나더!</p>-->
-          <!--<%= f.label :image3 %><br>-->
-  <!--        <%= f.file_field :image3, accept: 'image/png,image/gif,image/jpeg' %>-->
-  <!--      </div>-->
-  <!--      <div class="actions">-->
-  <!--        <%= f.submit %>-->
-  <!--      </div>-->
-  <!--    </div>-->
-  <!--  </div>-->
-  <!--</div>-->
-  
-  
-  <form>
-  <div class="form-group ny_center ">
-    <label for="exampleInputEmail1">이벤트명을 정해주세요!</label><br>
-     <%= f.text_field :title, class:'ny_short_write' %>
-  </div>
-  <div class="form-group ny_center">
-    <label for="exampleInputPassword1">주최하는 곳의 이름을 알려주세요!(ex.학과명,동아리명,팀명 등등)</label><br>
-    <%= f.text_field :host, class:'ny_short_write' %>
-  </div>
-  <div class="form-group ny_center">
-    <label for="exampleInputPassword1">이벤트에 관해 간단한 설명 부탁드려요!</label><br>
-    <%= f.text_area :contents ,class: 'ny_form-control' %>
-  </div>
-  <div class="form-group ny_center">
-    <label for="exampleInputPassword1">운영시간은?!</label><br>
-     <%= f.text_field :runtime, class:'ny_short_write' %>
-  </div>
-  <div class="form-group ny_center">
-    <label for="exampleInputPassword1">위치가 어딘가요?알려주세요!</label><br>
-    <%= f.text_field :location, class:'ny_short_write' %>
-  </div>
-  <div class="form-group ny_center">
-    <label for="exampleInputPassword1"> 대표 사진 선택 </label><br>
 
-    <%= f.file_field :mainimage, accept: 'image/png,image/gif,image/jpeg' %>
-  </div>
-  <div class="form-group ny_center">
-    <label for="exampleInputPassword1"> 세부 사진 선택!!(ex.메뉴판,판넬사진 기타..) </label><br>
-    <%= f.file_field :image2, accept: 'image/png,image/gif,image/jpeg' %>
-  </div>
-  <div class="form-group ny_center">
-    <label for="exampleInputPassword1"> 세부 사진 선택 하나더! </label><br>
-    <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder=" ">-->
-    
-    <%= f.file_field :image3, accept: 'image/png,image/gif,image/jpeg' %>
-  </div>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <button type="submit" class="btn btn-primary">저장합시다</button>
-</form>
+<div class="container newlostform">
+  <%= bootstrap_form_for @eventpost do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.text_field :title, label: "홍보명을 정해주세요!", placeholder: "ex.백종원 술트럭,인간 슈퍼마리오" %>
+      <%= f.text_field :host, label: "주최하는 곳의 이름을 알려주세요!", placeholder: "ex.학과명,동아리명,팀명 등등" %>
+      <%= f.text_area :contents, label: "간단한 설명 부탁드려요!", class: "tinymce", rows: 15, cols: 120, placeholder: "ex.낮술도 팔아요ㅎㅎ" %>
+      <%= f.text_field :runtime, label: "운영 시간은?", placeholder: "ex.오후2시~새벽2시" %>
+      <%= f.text_field :location, label: "위치가 어딘가요?", placeholder: "ex.운동장,k동 앞" %>
+      <%= f.file_field :mainimage, label:"대표 사진 선택!", accept: 'image/png,image/gif,image/jpeg' %>
+      <%= f.file_field :image2, label:"세부 사진 선택!(ex.메뉴판, 판넬..)", accept: 'image/png,image/gif,image/jpeg' %>
+      <%= f.file_field :image3, label:"사진 하나더!!(ex.위치사진..)", accept: 'image/png,image/gif,image/jpeg' %>
+      <%= f.submit %>
+  <% end %>
+</div>  
 
-
-  
 <% end %>
 
 <style>

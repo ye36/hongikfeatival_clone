@@ -40,7 +40,7 @@
 }
 
 .eventpost_show_text {
-    margin-left: 1rem;
+    // margin-left: 1rem;
     text-align:left;
 }
 
@@ -58,6 +58,46 @@
     width: auto;
     height: 100%;
 }
-.eventposts_pagen{
-    text-align: center;
+
+.newbtn{
+    position: absolute;
+    font-size:21px;
+    font-weight:bold;
+    color:black;
+    opacity:0.7;
+    background-color:white;
+    padding:5px;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.newbtn:hover{
+    font-size:21px;
+    font-weight:bold;
+    color:black;
+    opacity:1;
+    background-color:white;
+    padding:5px;
+}
+.h-show-img{
+    background: red;
+    position: relative;
+    overflow: hidden;
+    padding-top: 50%;
+    border-radius: 3px;
+}
+.h-show-title{
+    font-size: 3rem;
+}
+.h-show-text{
+    text-align: left;
+}
+@media screen and (max-width:799px){
+    .h-show-img{
+        background: red;
+        position: relative;
+        overflow: hidden;
+        padding-top: 80%;
+        border-radius: 3px;
+    }
 }

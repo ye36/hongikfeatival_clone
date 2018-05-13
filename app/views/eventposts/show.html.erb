@@ -2,40 +2,60 @@
   <p id="notice"><%= notice %></p>
   
   <div class="row show-img-container">
-    <div class="col-sm-12 h-img-wrapper">
-      <!--<strong>Mainimage:</strong>-->
+    <div class="col-sm-12 col-xl-6 h-show-img">
       <img class="h-img" src="<%= @eventpost.mainimage.main %>"/>
     </div>
+    <div class="col-sm-12 col-xl-6 h-show-text">
+      <div class="col-sm-12 eventpost_show_text">
+        <span class="h-show-title">
+          <%= @eventpost.title %>
+        </span>
+      </div>
     
-    <div class="col-sm-12 eventpost_show_text">
-      <span class="">
-        <strong>What?: </strong><%= @eventpost.title %>
-      </span>
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col col-sm-2 col-xl-3 eventpost_show_text">
+            <p>주최</p>
+          </div>
+          <div class="col col-sm-9 col-xl-9">
+            <%= @eventpost.host %>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col col-sm-2 col-xl-3 eventpost_show_text">
+            <p>위치</p>
+          </div>
+          <div class="col col-sm-9 col-xl-9">
+            <%= @eventpost.location %>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col col-sm-2 col-xl-3 eventpost_show_text">
+            <p>시간</p>
+          </div>
+          <div class="col col-sm-10 col-xl-9">
+            <%= @eventpost.runtime %>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col col-sm-2 col-xl-3 eventpost_show_text">
+            <p>소개</p>
+          </div>
+          <div class="col col-sm-10 col-xl-9">
+            <%= @eventpost.contents %>
+          </div>
+        </div>
+      </div>
     </div>
     
-    <div class="col-sm-12 eventpost_show_text">
-      <span class="">
-        <strong>주최: </strong><%= @eventpost.host %>
-      </span>
-    </div>
     
-    <div class="col-sm-12 eventpost_show_text">
-      <span class="">
-        <strong>위치: </strong><%= @eventpost.location %>
-      </span>
-    </div>
     
-    <div class="col-sm-12 eventpost_show_text">
-      <span class="">
-        <strong>시간: </strong> <%= @eventpost.runtime %>
-      </span>
-    </div>
-    
-    <div class="col-sm-12 eventpost_show_text">
-      <span class="">
-        <strong>소개: </strong> <%= @eventpost.contents %>
-      </span>
-    </div>
     <% if @eventpost.image2.main.present? %>
       <div class="col-sm-12 h-img-wrapper-show" >
         <img class="h-img" src="<%= @eventpost.image2.main %>" />
@@ -49,9 +69,8 @@
     <% else %>  
     <% end %>
     <div class="col-sm-12" >
-
+      <%= link_to 'Delete', eventpost_path(@eventpost), method:"delete"%> |
       <%= link_to 'Edit', edit_eventpost_path(@eventpost) %> |
-   
       <%= link_to 'Back', eventposts_path %>
     </div>
     

@@ -5,7 +5,7 @@ class FleemarketsController < ApplicationController
   # GET /fleemarkets
   # GET /fleemarkets.json
   def index
-    @fleemarkets = Fleemarket.all
+    @fleemarkets = Fleemarket.page(params[:page]).per(8)
   end
 
   # GET /fleemarkets/1
@@ -70,7 +70,7 @@ class FleemarketsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fleemarket_params
-      params.require(:fleemarket).permit(:category, :time, :location, :explain, :mainimage, :image2, :image3, :price, :name, :user_)
+      params.require(:fleemarket).permit(:category, :time, :location, :explain, :mainimage, :image2, :image3, :price, :name, :user_id)
     end
       def is_owner?
               redirect_to @fleemarket unless current_user == @fleemarket.user
