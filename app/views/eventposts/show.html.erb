@@ -5,47 +5,47 @@
     <div class="col-sm-12 col-xl-6 h-show-img">
       <img class="h-img" src="<%= @eventpost.mainimage.main %>"/>
     </div>
-    <div class="col-sm-12 col-xl-6 h-show-text">
+    <div class="col-sm-12 col-xl-6 h-show-text-wrapper">
       <div class="col-sm-12 eventpost_show_text">
         <span class="h-show-title">
           <%= @eventpost.title %>
         </span>
       </div>
     
-      <div class="col-sm-12">
+      <div class="col-sm-12 h-show-text-line">
         <div class="row">
           <div class="col col-sm-2 col-xl-3 eventpost_show_text">
-            <p>주최</p>
+            <div>주최</div>
           </div>
-          <div class="col col-sm-9 col-xl-9">
+          <div class="col col-sm-10 col-xl-9">
             <%= @eventpost.host %>
           </div>
         </div>
       </div>
-      <div class="col-sm-12">
+      <div class="col-sm-12 h-show-text-line">
         <div class="row">
           <div class="col col-sm-2 col-xl-3 eventpost_show_text">
-            <p>위치</p>
+            <div>위치</div>
           </div>
-          <div class="col col-sm-9 col-xl-9">
+          <div class="col col-sm-10 col-xl-9">
             <%= @eventpost.location %>
           </div>
         </div>
       </div>
-      <div class="col-sm-12">
+      <div class="col-sm-12 h-show-text-line">
         <div class="row">
           <div class="col col-sm-2 col-xl-3 eventpost_show_text">
-            <p>시간</p>
+            <div>시간</div>
           </div>
           <div class="col col-sm-10 col-xl-9">
             <%= @eventpost.runtime %>
           </div>
         </div>
       </div>
-      <div class="col-sm-12">
+      <div class="col-sm-12 h-show-text-line">
         <div class="row">
           <div class="col col-sm-2 col-xl-3 eventpost_show_text">
-            <p>소개</p>
+            <div>소개</div>
           </div>
           <div class="col col-sm-10 col-xl-9">
             <%= @eventpost.contents %>
@@ -68,7 +68,7 @@
       </div>    
     <% else %>  
     <% end %>
-    <div class="col-sm-12" >
+    <div class="col-sm-12 show-post-nav" >
       <%= link_to 'Delete', eventpost_path(@eventpost), method:"delete"%> |
       <%= link_to 'Edit', edit_eventpost_path(@eventpost) %> |
       <%= link_to 'Back', eventposts_path %>

@@ -46,9 +46,16 @@
 
 .h-card-body {
     text-align: left;
+    position: relative;
 }
 .h-card-text {
     font-size: 1rem;
+}
+.h-more {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 0.5rem;
 }
 .show-img-container {
     margin-top: 4rem;
@@ -89,9 +96,19 @@
 .h-show-title{
     font-size: 3rem;
 }
-.h-show-text{
+.h-show-text-wrapper{
     text-align: left;
+    padding: 0 20px;
 }
+.h-show-text-line{
+    // border-bottom :1px solid #333;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+.show-post-nav {
+    margin-top: 4rem;
+}
+
 @media screen and (max-width:799px){
     .h-show-img{
         background: red;
