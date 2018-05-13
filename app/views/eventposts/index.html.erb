@@ -1,0 +1,37 @@
+
+</div>
+<div class="ban3" id="ban3"></div>
+
+<div class='h-container'>
+  <p id="notice"><%= notice %></p>
+  
+
+  <br><br>
+      <div class="row">
+          <% @eventposts.each do |eventpost| %>
+            <div class = "col-sm-12 col-md-6 col-xl-3 h-card">
+              <a href = "/eventposts/<%= eventpost.id %>">
+                <div class="card">
+                  <div class="h-img-wrapper">
+                    <img class="card-img-top h-img" src="<%= eventpost.mainimage.main %>" alt="Card image cap">
+                  </div>
+                  <div class="card-body h-card-body">
+                    <h5 class="card-title"><%= eventpost.title %></h5>
+                    <p class="h-card-text"><%= eventpost.host %></p>
+                    <p class="h-card-text"> <%= eventpost.runtime %></p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          <% end %>
+        
+      </div>
+  <br><br>
+  <% if user_signed_in?%>
+    <%= link_to '게시물 등록', new_eventpost_path, class: "h-new-button" %>
+  <% else %>
+    <%= link_to '게시물 등록', new_user_session_path, class: "h-new-button" %>
+  <% end %>
+  <%= paginate @eventposts, window: 2 %>
+</div>
+

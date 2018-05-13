@@ -1,0 +1,61 @@
+<div class="h-container">
+  <p id="notice"><%= notice %></p>
+  
+  <div class="row show-img-container">
+    <div class="col-sm-12 h-img-wrapper">
+      <!--<strong>Mainimage:</strong>-->
+      <img class="h-img" src="<%= @eventpost.mainimage.main %>"/>
+    </div>
+    
+    <div class="col-sm-12 eventpost_show_text">
+      <span class="">
+        <strong>What?: </strong><%= @eventpost.title %>
+      </span>
+    </div>
+    
+    <div class="col-sm-12 eventpost_show_text">
+      <span class="">
+        <strong>주최: </strong><%= @eventpost.host %>
+      </span>
+    </div>
+    
+    <div class="col-sm-12 eventpost_show_text">
+      <span class="">
+        <strong>위치: </strong><%= @eventpost.location %>
+      </span>
+    </div>
+    
+    <div class="col-sm-12 eventpost_show_text">
+      <span class="">
+        <strong>시간: </strong> <%= @eventpost.runtime %>
+      </span>
+    </div>
+    
+    <div class="col-sm-12 eventpost_show_text">
+      <span class="">
+        <strong>소개: </strong> <%= @eventpost.contents %>
+      </span>
+    </div>
+    <% if @eventpost.image2.main.present? %>
+      <div class="col-sm-12 h-img-wrapper-show" >
+        <img class="h-img" src="<%= @eventpost.image2.main %>" />
+      </div>    
+    <% else %>
+    <% end %>
+    <% if @eventpost.image3.main.present? %>
+      <div class="col-sm-12 h-img-wrapper-show" >
+        <img class="h-img" src="<%= @eventpost.image3.main %>" />
+      </div>    
+    <% else %>  
+    <% end %>
+    <div class="col-sm-12" >
+
+      <%= link_to 'Edit', edit_eventpost_path(@eventpost) %> |
+   
+      <%= link_to 'Back', eventposts_path %>
+    </div>
+    
+      
+  </div>
+
+</div>

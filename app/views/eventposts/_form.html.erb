@@ -1,0 +1,143 @@
+<%= form_for(@eventpost) do |f| %>
+  <% if @eventpost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@eventpost.errors.count, "error") %> prohibited this eventpost from being saved:</h2>
+
+      <ul>
+      <% @eventpost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <!--<div class="row">-->
+    <!--<div class="ny_center">-->
+  <!--    <div class="col-sm-12 col-md-6  ">-->
+  <!--      <div class="field">-->
+  <!--        <p>이벤트명을 정해주세요!</p>-->
+          <!--<%= f.label :title %><br>-->
+  <!--        <%= f.text_field :title %>-->
+  <!--      </div>-->
+  <!--      <div class="field">-->
+  <!--        <p>어떤 컨셉인가요!?(ex.게임,푸드트럭,기타 ..)</p>-->
+          <!--<%= f.label :host %><br>-->
+  <!--        <%= f.text_field :host %>-->
+  <!--      </div>-->
+  <!--      <div class="field">-->
+  <!--        <p>이벤트에 관해 간단한 설명 부탁드려요!</p>-->
+          <!--<%= f.label :contents %><br>-->
+  <!--        <%= f.text_area :contents %>-->
+  <!--      </div>-->
+  <!--      <div class="field">-->
+  <!--        <p>운영시간은?!</p>-->
+          <!--<%= f.label :runtime %><br>-->
+  <!--        <%= f.text_field :runtime %>-->
+  <!--      </div>-->
+  <!--      <div class="field">-->
+  <!--        <p>위치가 어딘가요?알려주세요!</p>-->
+          <!--<%= f.label :location %><br>-->
+  <!--        <%= f.text_field :location %>-->
+  <!--      </div>-->
+        
+  <!--      <div class="field">-->
+  <!--        <p> 대표 사진 선택 </p>-->
+          <!--<%= f.label :mainimage %><br>-->
+  <!--        <%= f.file_field :mainimage, accept: 'image/png,image/gif,image/jpeg' %>-->
+  <!--      </div>-->
+        
+  <!--      <div class="field">-->
+  <!--        <p>세부 사진 선택!!(ex.메뉴판,판넬사진 기타..)</p>-->
+          <!--<%= f.label :image2 %><br>-->
+  <!--        <%= f.file_field :image2, accept: 'image/png,image/gif,image/jpeg' %>-->
+  <!--      </div>-->
+        
+  <!--      <div class="field">-->
+  <!--        <p>세부 사진 선택 하나더!</p>-->
+          <!--<%= f.label :image3 %><br>-->
+  <!--        <%= f.file_field :image3, accept: 'image/png,image/gif,image/jpeg' %>-->
+  <!--      </div>-->
+  <!--      <div class="actions">-->
+  <!--        <%= f.submit %>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--</div>-->
+  
+  
+  <form>
+  <div class="form-group ny_center ">
+    <label for="exampleInputEmail1">이벤트명을 정해주세요!</label><br>
+     <%= f.text_field :title, class:'ny_short_write' %>
+  </div>
+  <div class="form-group ny_center">
+    <label for="exampleInputPassword1">주최하는 곳의 이름을 알려주세요!(ex.학과명,동아리명,팀명 등등)</label><br>
+    <%= f.text_field :host, class:'ny_short_write' %>
+  </div>
+  <div class="form-group ny_center">
+    <label for="exampleInputPassword1">이벤트에 관해 간단한 설명 부탁드려요!</label><br>
+    <%= f.text_area :contents ,class: 'ny_form-control' %>
+  </div>
+  <div class="form-group ny_center">
+    <label for="exampleInputPassword1">운영시간은?!</label><br>
+     <%= f.text_field :runtime, class:'ny_short_write' %>
+  </div>
+  <div class="form-group ny_center">
+    <label for="exampleInputPassword1">위치가 어딘가요?알려주세요!</label><br>
+    <%= f.text_field :location, class:'ny_short_write' %>
+  </div>
+  <div class="form-group ny_center">
+    <label for="exampleInputPassword1"> 대표 사진 선택 </label><br>
+
+    <%= f.file_field :mainimage, accept: 'image/png,image/gif,image/jpeg' %>
+  </div>
+  <div class="form-group ny_center">
+    <label for="exampleInputPassword1"> 세부 사진 선택!!(ex.메뉴판,판넬사진 기타..) </label><br>
+    <%= f.file_field :image2, accept: 'image/png,image/gif,image/jpeg' %>
+  </div>
+  <div class="form-group ny_center">
+    <label for="exampleInputPassword1"> 세부 사진 선택 하나더! </label><br>
+    <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder=" ">-->
+    
+    <%= f.file_field :image3, accept: 'image/png,image/gif,image/jpeg' %>
+  </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <button type="submit" class="btn btn-primary">저장합시다</button>
+</form>
+
+
+  
+<% end %>
+
+<style>
+
+.opacity {
+  opacity: 0.85;
+}
+.ll{
+    font-size:18px;
+    font-weight:bold;
+    color:white;
+    margin-top:0px;
+}
+.imgsizer3{
+  padding-top:20px;
+    width:500px;
+    padding-bottom:0px;
+}
+
+.btn-primary{
+    background-color:#585a5e;
+    border: 0.3px solid black;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+.centerer{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>

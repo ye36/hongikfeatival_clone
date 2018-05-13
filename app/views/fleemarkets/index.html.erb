@@ -1,0 +1,40 @@
+<div class="navshower">
+  
+</div>
+<div class="ban2" id="ban2"></div>
+
+<div class='h-container'>
+  <p id="notice"><%= notice %></p>
+  
+  
+  
+  <br><br>
+      <div class="row">
+        <% @fleemarkets.each do |fleemarket| %>
+          <div class="col-sm-12 col-md-6 col-xl-3 h-card">
+            <a href = "/fleemarkets/<%= fleemarket.id %>">  
+              <div class="card">
+                <div class="h-img-wrapper">
+                  <% if !fleemarket.mainimage.blank? %>
+                    <img class="card-img-top h-img" src="<%= fleemarket.mainimage.main %>" alt="Card image cap">
+                  <% else %>
+                    <%= image_tag("placeholder_fest.jpeg", class: "card-img-top h-img") %>
+                  <% end %>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><%= fleemarket.name %></h5>
+                  <p class="card-text"><%= fleemarket.category %>/<%= fleemarket.price %></p>
+                  <p class="card-text"><%= fleemarket.time %></p>
+                </div>
+              </div>
+            </a>
+          </div>
+        <% end %>
+      </div>
+      <% if user_signed_in? %>
+    <%= link_to '마켓 등록', new_fleemarket_path %>
+    <% else %>
+    <%= link_to '마켓 등록', new_user_registration_path %>
+  <% end %>
+  
+</div>

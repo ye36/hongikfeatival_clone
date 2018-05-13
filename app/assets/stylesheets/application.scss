@@ -1,0 +1,255 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+html *{
+    font-family: 'Noto Sans', sans-serif;
+}
+.navlink{
+    display: flex;
+    justify-content:center;
+}
+
+.h-main{
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.h-main-img{
+    height: 100vh;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.mainimage{
+    width:5rem;
+    height:5rem;
+}
+.h-img-wrapper{
+    background: #8d53c4;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80%;
+    border-radius: 3px;
+}
+.h-img{
+    position: absolute;
+    width: auto;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.h-img-wrapper-show{
+    background: white;
+    position: relative;
+    overflow: hidden;
+    padding-top: 100%;
+    border-radius: 3px;
+}
+.h-nav{
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    // background: #fff;
+    width: 100%;
+}
+.h-menu{
+    text-align: center;
+    right: 1rem;
+}
+.h-container{
+    max-width: 980px;
+    margin: auto;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.h-logo{
+    width: 20%;
+}
+.h-logo-img{
+    width: 100%;
+}
+.h-menu-list{
+    font-size: 1rem;
+    color: #fff;
+}
+a:hover{
+    background-color: white;
+    text-decoration: none !important;
+}
+@media screen and (max-width:799px){
+    .navbar-light .navbar-toggler{
+        
+        color:white !important;
+    }
+    .navbar-toggler{
+        background:white;
+    }
+    .h-nav{
+        background-color: rgba(0,0,0,0.5)!important;
+
+    }
+    .h-menu-button{
+            color:white !important;
+    }
+    .h-logo{
+        width: 40%;
+    }
+    .h-logo-img{
+        width: 100%;
+    }
+    .h-main{
+        height: 30vh;
+        overflow: hidden;
+    }
+    .h-main-img{
+        height: auto;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+}
+.h-nav{
+        background-color: rgba(0,0,0,0.5)!important;
+}
+
+.h-main-img{
+    background-size: cover;
+}
+
+.h-card {
+    margin-top: 1rem;
+}
+
+#navbarSupportedContent{
+    background : none;
+    ul{
+        li{
+            a{
+                color:white;
+            }
+        }
+    }
+}
+.center-btn{
+    text-align:center;
+}
+
+.wrappersn{
+background: asset_url('home-01.png');
+}
+#wrappersn{
+    height:1050px;
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    -webkit-perspective: 1050px;
+    -o-perspective: 1050px;
+    perspective: 1050px;
+}
+.wrapperrn{
+background: asset_url('home-01.png');
+}
+#wrapperrn{
+    height:1050px;
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    -webkit-perspective: 10500px;
+    -o-perspective: 1050px;
+    perspective: 1050px;
+}
+.ban1{
+background: asset_url('home-05.png');
+}
+
+.ban3{
+    background: asset_url('home-02.png');
+}
+#ban1{
+    height:350px;
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-perspective: 400px;
+    -o-perspective: 400px;
+    perspective: 400px;
+    margin-bottom:20px;
+}
+.ban2{
+    background: asset_url('home-03.png');
+}
+#ban2{
+    height:350px;
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-perspective: 400px;
+    -o-perspective: 400px;
+    perspective: 400px;
+    margin-bottom:20px;
+}
+.h_btn_sign_up {
+    color:white !important;
+}
+.h-new-button {
+    border: 1px solid #8d53c4;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+

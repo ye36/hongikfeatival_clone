@@ -1,0 +1,93 @@
+<div class="wrappersn" id="wrappersn">
+      <div class="row">
+        <div class="col-12 col-md-3 col-lg-4"></div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <br><br>
+          <div class="container">
+                <div class="card opacity" style="margin-top:200px;">
+                  <div class="card-body">
+                    <div class="top">
+                          <div class="center-btn">
+                            <%= image_tag("signinlogo.png", :class => "loger1 img-fluid") %>
+                          </div>
+                    </div>
+                            <br>
+                            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                              <div class="form-group">
+                                <%= f.label :email,"이메일" ,class: "control-label"%><br />
+                                <%= f.email_field :email, autofocus: true, class: "form-control" %>
+                              </div>
+                            
+                              <div class="form-group">
+                                <%= f.label :password,"비밀번호",class: "control-label" %><br />
+                                <%= f.password_field :password, autocomplete: "off" ,class: "form-control" %>
+                              </div>
+                            
+                              <% if devise_mapping.rememberable? -%>
+                                <div class="form-group">
+                                  <%= f.check_box :remember_me %>
+                                  <%= f.label :remember_me,"remember me" %>
+                                </div>
+                              <% end -%>
+                            <br>
+                              <div class="actions">
+                                <div class="center-btn">
+                                  <%= f.submit "로그인", class: "btn btn-primary" %>
+                                </div>
+                                
+                              </div>
+                            <% end %>
+                        <br>
+                        <p class="sign_up_p">아직 가입하지 않으셨다면? <a class="sign_up_link" href="/users/sign_up">가입하기</a></p>
+                        </div>    
+                  </div>
+                  <div class="col-12 col-md-3 col-lg-4"></div>
+              </div>    
+          </div>
+        </div>
+</div>
+<style>
+.opacity {
+  opacity: 0.85;
+}
+.top{
+  padding-top:20px;
+  padding-bottom:0px;  
+}
+.font22{
+  font-size:14px;
+}
+.loger1{
+  width:500px;
+}
+.btn-primary{
+    background-color:black;
+    border: 0.3px solid black;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+.fbbt{
+  opacity:0.8;
+}
+.fbbt:hover{
+  opacity:1;
+}
+.bt1{
+  width:240px;
+}
+.sign_up_p{
+  color:black;
+  font-size:16px;
+}
+.sign_up_link{
+  color:black;
+  font-weight:bold;
+}
+.sign_up_link:hover{
+  color:black;
+  font-weight:bold;
+}
+</style>

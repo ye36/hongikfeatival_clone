@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wow festival</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+  
+</head>
+
+
+
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light h-nav ">
+        <a class="navbar-brand h-logo" href="/"><%= image_tag "logo_w.png", class: "h-logo-img" %></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse", onClick="background()", data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon h-menu-button"></span>
+        </button>
+        
+        <!--<div class="menubar-container">-->
+        <!--  <button type="button" class="btn-menubar">메인메뉴 열기</button>-->
+        <!--  <span class="menubar menubar-top"></span>-->
+        <!--  <span class="menubar menubar-middle"></span>-->
+        <!--  <span class="menubar menubar-bottom"></span>-->
+        <!--</div>-->
+        <div class="collapse navbar-collapse h-menu" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <!--<li class="nav-item active">-->
+              <!--  <a class="nav-link" href="#">홈<span class="sr-only">(current)</span></a>-->
+              <!--</li>-->
+              <li class="nav-item">
+                <a class="nav-link h-menu-list" href="#">축제정보</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link h-menu-list" href="#">주점정보</a>
+              </li>
+              <li class="nav-item">
+                <a href="/fleemarkets" class="nav-link h-menu-list">플리마켓</a>
+              </li>
+              <li class="nav-item">
+                <a href="/eventposts" class="nav-link h-menu-list">홍보게시판</a>
+              </li>
+              <li class="nav-item">
+                <a href="/lostposts" class="nav-link h-menu-list">분실물</a>
+              </li>
+              <% if user_signed_in?%>
+                <li class="nav-item">
+                  <a class="nav-link h-menu-list" href="/users/sign_out" data-method="delete">로그아웃</a>
+                </li>    
+              <% else %>
+                <li class="nav-item">
+                  <a class="nav-link h-menu-list" href="/users/sign_in">로그인</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link h-menu-list" href="/users/sign_up">회원가입</a>
+                </li>              
+              <% end %>
+            </ul>
+        </div>
+    </nav>
+<%= yield %>
+
+</body>
+</html>

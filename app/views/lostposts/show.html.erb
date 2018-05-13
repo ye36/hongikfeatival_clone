@@ -1,0 +1,414 @@
+   <div class="container-fluid" style="margin-top:60px;"> 
+      <div class="row">
+        <div class="col-0 col-lg-2"></div>
+        <div class="col-12 col-lg-8"><br>
+          <%= link_to "목록으로", lostposts_path,:class=>"listlink left"%>
+            <% if !user_signed_in? %> 
+            <%else%>
+              <% if current_user.id == @lostpost.user.id %>
+                <%= link_to image_tag("deleteiconsm.png"), lostpost_path(@lostpost), method: "delete", class: "float-right",:data => {:confirm => '진짜 지울래요?'} %>
+                <%= link_to image_tag("editiconsm.png"), edit_lostpost_path(@lostpost), class: "float-right blanker"%>
+                <br>
+              <%end%>
+            <% end %> 
+                                      
+          <div class="card" style="margin-top:10px; background-color:#f9f9f9;">
+            <div class="card-body" style="border-bottom:1px solid #e0e0e0 ; padding-bottom:8px;padding-top:8px;">
+              <p class="subclass  "><%= @lostpost.goal %></p>
+              <span class="card-title2  "><%= @lostpost.user.email %></span>
+              <span class="timeforman  "><%= distance_of_time_in_words Time.now, @lostpost.created_at%></span>
+            </div>
+          <div class="card-body">
+                              <p>
+                                <strong>목적:</strong>
+                                <%= @lostpost.goal %>
+                              </p>
+                              
+                              <p>
+                                <strong>분류:</strong>
+                                <%= @lostpost.group %>
+                              </p>
+                              
+                              <p>
+                                <strong>제목:</strong>
+                                <%= @lostpost.title %>
+                              </p>
+                              
+                              <p>
+                                <strong>내용:</strong>
+                                <%= @lostpost.content %>
+                              </p>
+                              
+                              <p>
+                                <strong>위치:</strong>
+                                <%= @lostpost.location %>
+                              </p>
+                              
+                              <p>
+                                <strong>Image:</strong>
+                                <%= image_tag(@lostpost.image.main) %>
+                              </p>
+                            </div>
+                          </div>
+                          <br>
+          <p class="comsize"><span class="highlighter"><%= @lostpost.lostcomments.count %></span> 개의 댓글</p>
+        </div>         
+      <div class="col-0 col-lg-2"></div>
+    </div> 
+  </div> 
+                                    <div class="container">
+                                               <div id="lostcomments-<%=@lostpost.id%>">
+                                                    <% @lostpost.lostcomments.each do |lostcomment| %>
+                                                        <div id="lostcomment-<%=lostcomment.id%>" class="comdivcol">
+                                                          <span class="title3  "><%= lostcomment.user.email %></span>
+                                                          <span class="float-right timeforman2  "><%= distance_of_time_in_words Time.now, lostcomment.created_at%></span> 
+                                                          <p class="comcont  "><%= lostcomment.content %></p>
+                                                          <% if !user_signed_in? %> 
+                                                          <%else%>                                                
+                                                            <% if lostcomment.user.id == current_user.id%>
+                                                              <%= link_to image_tag("deleteiconsm.png"), lostpost_lostcomment_path(@lostpost, lostcomment), method: "delete", class: "float-right delmar",remote: true,:authenticity_token => true,:data => {:confirm => '진짜 지워요?'} %>
+                                                            <% end %>  
+                                                          <%end%>      
+                                                           <br>
+                                                        </div>
+                                                    <%end%>
+                                               </div>
+                                                 <br>
+
+                                                <%= form_for @lostcomment, url: lostpost_lostcomments_path(@lostpost)  do |f| %>
+                                                    <% if !user_signed_in? %> 
+                                                    <div class="form-group">
+                                                    <fieldset disabled>
+                                                      <div class="input-field smaller">
+                                                        <%= f.text_area :content,class: "form-control fhei", placeholder: "댓글을 남기시려면 가입해 주세요!",required: true %>
+                                                      </div>
+                                                      <br>
+                                                      <div class="input-field center-btn">
+                                                        <%= button_tag "댓글달기", class: "btn btn-secondary  " %>
+                                                      </div>
+                                                      </fieldset>
+                                                      </div>
+                                                      <hr>                                                    
+                                                    <%else%>
+                                                        <%= f.hidden_field :user_id, value: current_user.id %>
+                                                        <%= f.hidden_field :lostpost_id, value: @lostpost.id %>
+                                                    <div class="form-group">
+                                                      <div class="input-field smaller">
+                                                        <%= f.text_area :content,class: "form-control fhei", placeholder: "댓글을 남기시려면 가입해 주세요!",required: true %>
+                                                      </div>
+                                                      <br>
+                                                      <div class="input-field center-btn">
+                                                        <%= button_tag "댓글달기", class: "btn btn-secondary  " %>
+                                                      </div>
+                                                      </div>                                                      
+                                                      <hr>
+                                                    <%end%>  
+                                                <% end %> 
+                                    </div> 
+
+<style>
+img{
+    max-width:100%;
+    height:auto;
+}
+    .title2{
+         font-size:13px;
+          position:relative;
+          top:-11px;
+          padding-left:3px;
+    } 
+    .title3{
+         font-size:15px;
+         font-weight:bold;
+         color:#565759;
+         padding-left:5px;
+          top:9px;
+    }   
+    .comcont{
+       padding-left:3px;
+       font-size:14px; 
+       padding-top:13px;       
+    }
+    .timeforman2{
+        font-size:10px;
+       position:relative;
+          top:-3px;
+          padding-right:14px;
+    }    
+    .timeforman1{
+        font-size:10px;
+       position:relative;
+          top:6px;
+    }   
+    .timeforman{
+        font-size:10px;
+       position:relative;
+          top:-0.5px;
+    }
+    .card-title2{
+        font-size:17px;
+        font-weight:700;
+          position:relative;
+          top:-0.5px;
+          padding-left:0px;
+    }
+    .blanker{
+        margin-right:10px;
+    }    
+    .smaller{
+        padding:0px;
+    }   
+    .listlink{
+      font-size:14px;
+      margin-right:8px;
+    }
+    .subclass{
+      font-weight:bold;
+      font-size:15px;
+      padding-top:5px;
+      margin-bottom:6px;
+    }
+    .ct{
+      width:30px;
+    }
+    .tarea{
+        height:100px;
+    }
+    .thumb1{
+        position:relative;
+        width:32px;
+        top:-10px;
+        margin-top:10px;
+        margin-right:5px;
+    }
+    .thumb2{
+        width:60px;
+    }   
+    
+    
+blockquote{
+  margin: 20px 0;
+  padding-left: 1.5rem;
+  border-left: 5px solid #424242; /* Just change the color value and that's it*/
+}
+
+    .card{
+        margin-bottom:14px;
+    }
+    .bng{
+        max-height:140px;
+    }
+    .card-title1{
+        font-size:16px;
+        color:#424242;
+        margin-bottom:4px;
+    }
+    .whoer{
+        padding-top:3px;
+        font-size:13px;
+        margin-bottom:0px;
+    }
+    .cardfoot{
+        border-top:1px solid #e0e0e0;
+    }
+    .colorer{
+        color:#ff1744;
+    }
+    .colorized1{
+        background-color:#464540;
+    }
+    .alignimg{
+        margin-bottom:12px;
+    }
+    .sizer{
+        width:55px;
+    }
+    .blankerbt{
+        margin-bottom:20px;
+    }
+    .sizer2{
+        padding-left:5px;
+        padding-top:3px;
+        width:78px;
+        opacity:0.7;
+    }
+    .sizer2:hover{
+        opacity:1.0;
+    }
+        .imgsizer{
+        width:320px;
+        padding-bottom:0px;
+    }
+    .imgsizer2{
+        padding-top:54px;
+        width:190px;
+    }    
+
+    .button1{
+        width:80px;
+        opacity:0.8;
+    }
+    .button1:hover{
+        opacity:1.0;
+    }   
+    #textarea1:focus {
+  border-bottom: 1px solid black;
+  box-shadow: 0 1px 0 0 #616161;
+}
+.tt2{
+    margin:4px;
+}    
+.bthover:hover{
+    text-decoration:none;
+    border:0px;
+}
+
+
+.thumbfin{
+    width:70px;
+    margin-bottom:8px;
+}
+.hov2:hover{
+    text-decoration:none;
+}
+
+@media screen and (min-width: 900px) {
+#fixratio {width:90%;}
+#fixratio2 {width:10%;}
+}
+.cate{
+    font-weight:bold;
+}
+.numgood{
+    font-weight:bold;
+    font-size:17px;
+}
+.commentsu{
+    color:#ffa03a;
+}
+.datefont{
+    font-size:11px;
+}
+.fixratio{
+    width:80%;
+}
+.fixratio2{
+     width:20%;  
+}
+.cateselect{
+    margin-bottom:30px;
+}
+.catesizer{
+    width:80px;
+    margin-right:5px;
+    margin-top:10px;
+}
+th{
+    font-size:15px;
+}
+td{
+    font-size:13px;
+}
+    .hoverer{
+        color:black;
+        opacity:0.84;
+    }
+    a:hover {
+        color:black;
+    }
+    .hoverer:hover{
+        text-decoration:none;
+        opacity:1;
+    } 
+    a:hover{
+        text-decoration:none;
+    }
+    .navshower{
+      min-height:60px;
+      background-color:black;
+    }
+    .pushdown{
+      margin-top:250px;
+    }
+    .newbtn{
+      font-size:21px;
+      font-weight:bold;
+      color:white;
+      background-color:white;
+      padding:5px;
+    }
+   .title2{
+         font-size:13px;
+          position:relative;
+          top:-11px;
+          padding-left:3px;
+    } 
+
+    .timeforman2{
+        font-size:10px;
+       position:relative;
+          top:-3px;
+          padding-left:3px;
+    }    
+    .timeforman1{
+        font-size:10px;
+       position:relative;
+          top:6px;
+    }   
+    .timeforman{
+        font-size:9px;
+       position:relative;
+          top:-5px;
+    }
+    .card-title2{
+        font-size:13px;
+          position:relative;
+          top:-5px;
+          padding-left:0px;
+    }
+    .blanker{
+        margin-right:10px;
+    }    
+    .listlink{
+      font-size:14px;
+      margin-right:8px;
+    }
+    .subclass{
+      font-weight:bold;
+      font-size:15px;
+      padding-top:5px;
+    }
+    .thumbnail{
+      padding-bottom:9px;
+    }
+    .ct{
+      width:30px;
+    }
+.comdivcol {
+    background-color: #f4f4f4;
+    margin-top: 13px;
+    padding-top: 20px;
+    padding-left: 16px;
+    padding-bottom: 10px;
+}
+.highlighter{
+    color:#239fff;
+    font-size:17px;
+}
+.comsize{
+    font-size:17px;
+}
+</style>
+
+<script>
+$(window).scroll(function() {
+  sessionStorage.scrollTop = $(this).scrollTop();
+});
+$(document).ready(function() {
+  if (sessionStorage.scrollTop != "undefined") {
+    $(window).scrollTop(sessionStorage.scrollTop);
+  }
+});    
+</script>
+    
+
