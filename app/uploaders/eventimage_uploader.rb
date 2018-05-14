@@ -5,7 +5,7 @@ class EventimageUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   #storage :file
-   storage :fog
+  storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -34,20 +34,20 @@ class EventimageUploader < CarrierWave::Uploader::Base
   # end
   process :resize_to_limit => [1024,768] 
   
-  version :main do
-      process :resize_to_fill => [240, 180] ,:if => :horizontal?
-      process :resize_to_fill => [240, 320]  ,:if => :vertical?
-  end
+  # version :main do
+  #     process :resize_to_fill => [480, 360] ,:if => :horizontal?
+  #     process :resize_to_fill => [480, 640]  ,:if => :vertical?
+  # end
 
-  def horizontal?(new_file)
-    image = MiniMagick::Image.open(self.file.file)
-    true if image[:height] < image[:width]
-  end
+  # def horizontal?(new_file)
+  #   image = MiniMagick::Image.open(self.file.file)
+  #   true if image[:height] < image[:width]
+  # end
   
-  def vertical?(new_file)
-    image = MiniMagick::Image.open(self.file.file)
-    true if image[:height] > image[:width]
-  end  
+  # def vertical?(new_file)
+  #   image = MiniMagick::Image.open(self.file.file)
+  #   true if image[:height] > image[:width]
+  # end  
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

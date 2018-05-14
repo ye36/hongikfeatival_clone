@@ -49,15 +49,15 @@ p {
     height:5rem;
 }
 .h-img-wrapper{
-    background: #8d53c4;
+    background: #fff;
     position: relative;
     overflow: hidden;
-    padding-top: 80%;
+    padding-top: 100%;
     border-radius: 3px;
 }
 .h-img{
     position: absolute;
-    width: 100%;
+    width: auto;
     height: 100%;
     top: 0;
     left: 50%;
@@ -86,6 +86,9 @@ p {
     margin: auto;
     text-align: center;
     // margin-top: 5rem;
+    h1{
+        margin-top: 8rem;
+    }
 }
 
 .h-logo{
@@ -128,7 +131,7 @@ a:hover{
 }
 
 .h-card {
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 #navbarSupportedContent{
@@ -300,7 +303,9 @@ background: asset_url('home-01.jpg');
     .ban{
         height: 200px;
     }
-    
+    .h-card{
+        margin: 1rem;
+    }
 }
 
 

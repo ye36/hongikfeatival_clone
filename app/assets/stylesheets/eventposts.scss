@@ -87,7 +87,8 @@
     padding:5px;
 }
 .h-show-img{
-    background: red;
+    // background: red;
+    border: 1px solid #999;
     position: relative;
     overflow: hidden;
     padding-top: 50%;
@@ -106,15 +107,34 @@
     padding: 10px;
 }
 .show-post-nav {
-    margin-top: 4rem;
+    margin: 4rem 0;
 }
-
+.h-card {
+    box-shadow: 0px 3px 15px 0 rgba(0, 0, 0, 0.3);
+}
+.h-card-title{
+    font-size: 1.5rem;
+    color: #333;
+}
+.show-sub-img{
+    margin-top: 2rem;
+}
+.h-sub-img-wrapper{
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    padding-top: 50%;
+    border-radius: 3px;
+}
 @media screen and (max-width:799px){
     .h-show-img{
-        background: red;
+        background: #fff;
         position: relative;
         overflow: hidden;
-        padding-top: 80%;
+        padding-top: 100%;
         border-radius: 3px;
+    }
+    .show-img-container {
+        margin-top: 0;
     }
 }

@@ -12,14 +12,14 @@
   <!--<p id="notice"><%= notice %></p>-->
       <div class="row">
           <% @eventposts.each do |eventpost| %>
-            <div class = "col-sm-12 col-md-6 col-xl-3 h-card">
+            <div class = "col-sm-12 col-md-6 col-xl-3">
               <a href = "/eventposts/<%= eventpost.id %>">
-                <div class="card">
+                <div class="card h-card">
                   <div class="h-img-wrapper">
-                    <img class="card-img-top h-img" src="<%= eventpost.mainimage.main %>" alt="Card image cap">
+                    <img class="h-img" src="<%= eventpost.mainimage %>" alt="Card image cap">
                   </div>
                   <div class="card-body h-card-body">
-                    <h5 class="card-title"><%= eventpost.title %></h5>
+                    <h5 class="h-card-title"><%= eventpost.title %></h5>
                     <p class="h-card-text"><%= eventpost.host %></p>
                     <p class="h-card-text"> <%= eventpost.runtime %></p>
                     <div href="#" class="btn h-more">MORE</div>

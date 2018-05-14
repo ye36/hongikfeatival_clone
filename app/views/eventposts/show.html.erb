@@ -3,7 +3,7 @@
   
   <div class="row show-img-container">
     <div class="col-sm-12 col-xl-6 h-show-img">
-      <img class="h-img" src="<%= @eventpost.mainimage.main %>"/>
+      <img class="h-img" src="<%= @eventpost.mainimage %>"/>
     </div>
     <div class="col-sm-12 col-xl-6 h-show-text-wrapper">
       <div class="col-sm-12 eventpost_show_text">
@@ -55,19 +55,23 @@
     </div>
     
     
+    <div class="col-sm-12">
+      <div class="row show-sub-img">
+        <% if @eventpost.image2.present? %>
+          <div class="col col-sm-6 col-xl-6 h-sub-img-wrapper" >
+            <img class="h-img" src="<%= @eventpost.image2 %>" />
+          </div>    
+        <% else %>
+        <% end %>
+        <% if @eventpost.image3.present? %>
+          <div class="col col-sm-6 col-xl-6 h-sub-img-wrapper" >
+            <img class="h-img" src="<%= @eventpost.image3 %>" />
+          </div>    
+        <% else %>  
+        <% end %>
+      </div>
+    </div>
     
-    <% if @eventpost.image2.main.present? %>
-      <div class="col-sm-12 h-img-wrapper-show" >
-        <img class="h-img" src="<%= @eventpost.image2.main %>" />
-      </div>    
-    <% else %>
-    <% end %>
-    <% if @eventpost.image3.main.present? %>
-      <div class="col-sm-12 h-img-wrapper-show" >
-        <img class="h-img" src="<%= @eventpost.image3.main %>" />
-      </div>    
-    <% else %>  
-    <% end %>
     <div class="col-sm-12 show-post-nav" >
       <%= link_to 'Delete', eventpost_path(@eventpost), method:"delete"%> |
       <%= link_to 'Edit', edit_eventpost_path(@eventpost) %> |
