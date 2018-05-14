@@ -1,0 +1,25 @@
+<div style=" max-width: 600px; padding-left:50px; padding-right:50px; "
+<div class="container newlostform">
+  <%= bootstrap_form_for @restaurant do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.text_field :name, label: "식당이름", :required => true %>
+      <%= f.text_field :location, label: "주소" ,:required => true%>
+      <%= f.text_field :tel,    label: "전화번호", :required => true%>
+      <%= f.text_field :range, label: "가격대", placeholder: "ex) 0.5 - 2.0",:required => true %>
+      <%= f.text_field :delivery, label: "배달유무" ,:required => true%>
+      <%= f.text_field :package, label: "포장유무" ,:required => true%>
+      <%= f.text_field :runtime, label: "영업시간",:required => true%>
+      <%= f.text_field :point1, label: "좌표1",:required => true%>
+      <%= f.text_field :point2, label: "좌표2",:required => true%>
+      <%= f.text_field :sale,label: "할인여부",:required => true  %>
+      <%= f.text_field :foodtype,label: "종류",:required => true  %>
+      <%= f.file_field :menuimg,label: "메뉴사진" ,accept: 'image/png,image/gif,image/jpeg' %>
+      <%= f.file_field :image,label: "세부사진 하나더!  ",accept: 'image/png,image/gif,image/jpeg' %>
+      <div class="h-container">
+        <div style="margin-top:40px;"></div>
+      <button type="submit" class="btn btn-secondary" id="marketenroll">등록하기</button>
+      <button type="button" class="btn btn-secondary" id="marketenroll" onclick="location.href='/restaurants';" >뒤로가기</button>
+      <div style="margin-top:25px;"></div>
+  <% end %>
+</div>
+</div>

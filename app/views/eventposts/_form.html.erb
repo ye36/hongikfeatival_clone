@@ -1,3 +1,4 @@
+<div style=" max-width: 600px; padding-left:50px; padding-right:50px; "
 <div class="container newlostform">
   <%= bootstrap_form_for @eventpost do |f| %>
       <%= f.hidden_field :user_id, value: current_user.id %>
@@ -6,12 +7,19 @@
       <%= f.text_area :contents, label: "간단한 설명 부탁드려요!", class: "tinymce", rows: 15, cols: 120, placeholder: "ex.낮술도 팔아요ㅎㅎ" %>
       <%= f.text_field :runtime, label: "운영 시간은?", placeholder: "ex.오후2시~새벽2시", :required => true %>
       <%= f.text_field :location, label: "위치가 어딘가요?", placeholder: "ex.운동장,k동 앞", :required => true %>
-      <%= f.file_field :mainimage,label: "대표사진 선택!  ", accept: 'image/png,image/gif,image/jpeg' %>
+      <%= f.file_field :mainimage,label: "대표사진 선택!  ", accept: 'image/png,image/gif,image/jpeg', :required => true %>
       <%= f.file_field :image2,label: "대표사진 선택!  ", accept: 'image/png,image/gif,image/jpeg' %>
       <%= f.file_field :image3,label: "대표사진 선택!  ", accept: 'image/png,image/gif,image/jpeg' %>
-      <%= f.submit %>
+      <div class="h-container">
+        <div style="margin-top:40px;"></div>
+        <button type="submit" class="btn btn-secondary" id="marketenroll">등록하기</button>
+      <button type="button" class="btn btn-secondary" id="marketenroll" onclick="location.href='/fleemarkets';" >뒤로가기</button>
+      
+      </div>
+      <div style="margin-top:25px;"></div>
   <% end %>
 </div>  
+</div>
 
 <style>
 

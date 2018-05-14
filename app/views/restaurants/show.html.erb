@@ -1,0 +1,190 @@
+<div class="row">
+ <div class="card col-12" style=" background-color:#f9f9f9; margin-top: 4rem; ">
+  <div class="card-body" style="border-bottom:1px solid #e0e0e0;">
+   <div class="row">
+    <div class=" col-xl-2"></div>
+    <div class=" col-xl-4">
+     <p>
+      <div class="h-container">
+       <div style="border: 2px solid;">
+        <div class="j-line">
+         <strong>
+          <%= @restaurant.name %>
+          </strong>
+       </div>
+       </div>
+       <hr>
+       </div>
+      
+     </p>
+     <div style="margin-top: 30px;">
+    
+  <div class="row restaurant-info">
+   <div class="col-xl-1"></div>
+   <div class="col col-xs-3 col-xl-4">
+    <font size="5"> <strong>주소</strong>
+   </div>
+   <div class="col col-xs-9 col-xl-7">
+    <%= @restaurant.location %></font>
+   </div>
+  </div>
+  
+  <div class="row restaurant-info">
+   <div class="col-xl-1"></div>
+   <div class="col col-xs-3 col-xl-4">
+    <font size="5"> <strong>종류</strong>
+   </div>
+   <div class="col col-xs-9 col-xl-7">
+    <%= @restaurant.foodtype %></font>
+   </div>
+  </div>  
+  
+  <div class="row restaurant-info">
+   <div class="col-xl-1"></div>
+   <div class="col col-xs-3 col-xl-4">
+    <font size="5"> <strong>전화번호</strong>
+   </div>
+   <div class="col col-xs-9 col-xl-7">
+    <%= @restaurant.tel %></font>
+   </div>
+  </div>
+  
+  <div class="row restaurant-info">
+   <div class="col-xl-1"></div>
+   <div class="col col-sm-3 col-xl-4">
+     <font size="5"> <strong>가격대</strong>
+   </div>
+   <div class="col col-sm-9 col-xl-7">
+    <%= @restaurant.range %></font>
+   </div>
+  </div>
+  
+  <div class="row restaurant-info">
+   <div class="col-xl-1"></div>
+    <div class="col col-sm-3 col-xl-4">
+     <font size="5"> <strong>배달유무</strong>
+    </div>
+    <div class="col col-sm-9 col-xl-7">
+     <%= @restaurant.delivery %></font>
+    </div>
+  </div>
+  
+  <div class="row restaurant-info">
+   <div class="col-xl-1"></div>
+    <div class="col col-sm-3 col-xl-4">
+     <font size="5"> <strong>할인여부</strong>
+    </div>
+    <div class="col col-sm-9 col-xl-7">
+     <%= @restaurant.sale %></font>
+    </div>
+  </div>  
+  
+  <div class="row restaurant-info">
+   <div class="col-xl-1"></div>
+   <div class="col col-sm-3 col-xl-4">
+   <font size="5"> <strong>포장유무</strong>
+   </div>
+   <div class="col col-sm-9 col-xl-7">
+    <%= @restaurant.package%></font>
+   </div>
+  </div>
+  <div style="margin-bottom:50px"></div>
+  </div>
+  </div>    
+    
+  <div class="col-xs-12 col-sm-12 col-xl-4">
+   <div id="map" style="width:auto; height:400px;"></div>
+  </div>
+
+
+  </div>
+  </div>
+  
+ 
+  
+</div> 
+
+</div>
+
+
+<div class="middlemargin"></div>
+
+<div class="row">
+<div class="card col-12" style="margin-top:10px; background-color:#f9f9f9; padding:10px;">
+ <div class="card-body" style="border-bottom:1px solid #e0e0e0 ; ">
+
+<div class="row">
+ <div class="col-xl-4"></div>
+  <div class="col-xl-4">
+   <div style="margin-top:10px;"></div>
+      <div style="border: 2px solid;">
+         <div class="h-container">
+          
+            <div class="j-line"><strong>맛집사진</strong></div>
+        </div>
+      </div>
+    </div>
+  <div class="col-xl-4"></div>
+</div>
+ 
+
+<hr>
+<div style="margin-top:30px;"></div>
+<div class="row">
+ 
+     <div class=" col-xl-2"></div>
+  <% if @restaurant.menuimg.present? %>
+      <div class="col-sm-12 col-xl-4 " >
+        <img class="image2" src="<%= @restaurant.menuimg %>" />
+      </div>    
+    <% else %>
+    <% end %>
+    
+    <% if @restaurant.image.present? %>
+      <div class="col-sm-12 col-xl-4 " >
+        <img class="image3" src="<%= @restaurant.image %>" />
+      </div>    
+    <% else %>  
+    <% end %>
+    <div class=" col-xl-2"></div>
+    </div><div style="margin-bottom:40px;"></div>
+    </div>
+  
+    
+
+
+    </div><div style="margin-bottom:20px;"></div>
+    </div> 
+    </div>
+    
+    
+      
+ 
+  
+  <div class="middlemargin"></div>
+  <div style="text-align:center;">
+   <font size="4">
+   <%= link_to '삭제하기', restaurant_path(@restaurant), method:"delete"%> |
+   <%= link_to '수정하기', edit_restaurant_path(@restaurant) %> |
+   <%= link_to '뒤로가기', restaurants_path %>
+   </font>
+  </div> 
+  <div style="margin-bottom: 50px;"></div>
+</div> 
+
+
+<script>
+var map = new naver.maps.Map('map', {
+        center: new naver.maps.LatLng(<%=@restaurant.point1%>,<%=@restaurant.point2%>), //지도의 초기 중심 좌표
+        zoom: 8, //지도의 초기 줌 레벨
+        minZoom: 1, //지도의 최소 줌 레벨
+        zoomControl: true, //줌 컨트롤의 표시 여부
+        zoomControlOptions: { //줌 컨트롤의 옵션
+            position: naver.maps.Position.TOP_RIGHT
+        }
+    });
+var marker = new naver.maps.Marker({
+    position: new naver.maps.LatLng(<%=@restaurant.point1%>,<%=@restaurant.point2%>),
+    map: map
+});    
+</script>

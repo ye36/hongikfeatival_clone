@@ -1,11 +1,11 @@
 class FleemarketsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]  
   before_action :set_fleemarket, only: [:show, :edit, :update, :destroy]
-  before_action :is_owner?, only: [:destroy, :edit, :update] 
+  before_action :is_owner?, only: [:edit, :update, :destroy] 
   # GET /fleemarkets
   # GET /fleemarkets.json
   def index
-    @fleemarkets = Fleemarket.page(params[:page]).per(8)
+    @fleemarkets = Fleemarket.order(created_at: :DESC).page(params[:page]).per(8)
   end
 
   # GET /fleemarkets/1
@@ -72,9 +72,12 @@ class FleemarketsController < ApplicationController
     def fleemarket_params
       params.require(:fleemarket).permit(:category, :time, :location, :explain, :mainimage, :image2, :image3, :price, :name, :user_id)
     end
-      def is_owner?
-              redirect_to @fleemarket unless current_user == @fleemarket.user
-          end
+    def is_owner?
+      if(current_user == @fleemarket.user || current_user.id==1 || current_user.id==2 || current_user.id==3 || current_user.id==4 || current_user.id==5 || current_user.id==6 || current_user.id==7 || current_user.id==8 )      
+      else
+        redirect_to @fleemarket  
+      end
+    end
   end
 
 

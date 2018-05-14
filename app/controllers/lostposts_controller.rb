@@ -5,24 +5,27 @@ class LostpostsController < ApplicationController
   # GET /lostposts
   # GET /lostposts.json
   def index
-    
-    if params[:goal]
-      if params[:goal] == "주인을 찾아요"
-        @lostposts = Lostpost.where(:goal => params[:goal]).order('created_at DESC').page(params[:page]).per(8)
-      else params[:goal] == "물건을 찾아요"
-        @lostposts = Lostpost.where(:goal => params[:goal]).order('created_at DESC').page(params[:page]).per(8)
-      end
-    elsif params[:group]
-      if params[:group] == "지갑"
-        @lostposts = Lostpost.where(:group => params[:group]).order('created_at DESC').page(params[:page]).per(8)
-      elsif params[:group] == "가방"
-        @lostposts = Lostpost.where(:group => params[:group]).order('created_at DESC').page(params[:page]).per(8)
-      elsif params[:group] == "휴대폰"
-        @lostposts = Lostpost.where(:group => params[:group]).order('created_at DESC').page(params[:page]).per(8)
-      else params[:group] == "기타"
-        @lostposts = Lostpost.where(:group => params[:group]).order('created_at DESC').page(params[:page]).per(8)        
-      end      
-    else 
+    @qus = params[:goal]
+    @qus2 = params[:group]
+
+
+    if @qus == "주인을 찾아요" && @qus2 == "지갑"
+      @lostposts = Lostpost.where(:goal => @qus, :group => @qus2).order('created_at DESC').page(params[:page]).per(8)
+    elsif @qus == "주인을 찾아요" && @qus2 == "가방"
+      @lostposts = Lostpost.where(:goal => @qus, :group => @qus2).order('created_at DESC').page(params[:page]).per(8)
+    elsif @qus == "주인을 찾아요" && @qus2 == "휴대폰"
+      @lostposts = Lostpost.where(:goal => @qus, :group => @qus2).order('created_at DESC').page(params[:page]).per(8)
+    elsif @qus == "주인을 찾아요" && @qus2 == "기타"
+      @lostposts = Lostpost.where(:goal => @qus, :group => @qus2).order('created_at DESC').page(params[:page]).per(8)
+    elsif @qus == "물건을 찾아요" && @qus2 == "지갑"
+      @lostposts = Lostpost.where(:goal => @qus, :group => @qus2).order('created_at DESC').page(params[:page]).per(8)
+    elsif @qus == "물건을 찾아요" && @qus2 == "가방"
+      @lostposts = Lostpost.where(:goal => @qus, :group => @qus2).order('created_at DESC').page(params[:page]).per(8)
+    elsif @qus == "물건을 찾아요" && @qus2 == "휴대폰"
+      @lostposts = Lostpost.where(:goal => @qus, :group => @qus2).order('created_at DESC').page(params[:page]).per(8)
+    elsif @qus == "물건을 찾아요" && @qus2 == "기타"
+      @lostposts = Lostpost.where(:goal => @qus, :group => @qus2).order('created_at DESC').page(params[:page]).per(8)
+    else
       if params[:search]
         if params[:selecto]=="1"
           @lostposts = Lostpost.search1(params[:search]).order("created_at DESC").page(params[:page]).per(8)
@@ -33,10 +36,9 @@ class LostpostsController < ApplicationController
         else
         end
       else
-       @lostposts = Lostpost.page(params[:page]).per(8)
-      end       
+       @lostposts = Lostpost.order(created_at: :DESC).page(params[:page]).per(8)
+      end  
     end
-    
   end
 
   # GET /lostposts/1
@@ -107,6 +109,9 @@ class LostpostsController < ApplicationController
     end
     
     def is_owner?
-        redirect_to @lostpost unless current_user == @lostpost.user
+      if(current_user == @lostpost.user || current_user.id==1 || current_user.id==2 || current_user.id==3 || current_user.id==4 || current_user.id==5 || current_user.id==6 || current_user.id==7 || current_user.id==8 )      
+      else
+        redirect_to @lostpost  
+      end
     end    
 end

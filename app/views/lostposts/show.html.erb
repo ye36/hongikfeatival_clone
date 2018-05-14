@@ -15,7 +15,7 @@
           <div class="card" style="margin-top:10px; background-color:#f9f9f9;">
             <div class="card-body" style="border-bottom:1px solid #e0e0e0 ; padding-bottom:8px;padding-top:8px;">
               <p class="subclass"><%= @lostpost.goal %></p>
-              <span class="card-title2  "><%= @lostpost.user.email %></span>
+              <span class="card-title2  "><%= @lostpost.user.name %></span>
               <span class="timeforman  "><%= distance_of_time_in_words Time.now, @lostpost.created_at%></span>
             </div>
           <div class="card-body">

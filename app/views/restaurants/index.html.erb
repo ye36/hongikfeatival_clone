@@ -1,8 +1,6 @@
-
-
 <div class="ban3 ban" id="ban3">
   <% if user_signed_in?%>
-    <%= link_to '게시글 작성하기', new_eventpost_path, class: "newbtn" %>
+    <%= link_to '게시글 작성하기', new_restaurant_path, class: "newbtn" %>
   <% else %>
     <%= link_to '게시글 작성하기', new_user_session_path, class: "newbtn" %>
   <% end %>
@@ -10,23 +8,22 @@
 
 <div class='h-container'>
       <div class="row">
-          <% @eventposts.each do |eventpost| %>
+          <% @restaurants.each do |restaurant| %>
             <div class = "col-sm-12 col-md-6 col-xl-3">
-              <a href = "/eventposts/<%= eventpost.id %>">
+              <a href = "/restaurants/<%= restaurant.id %>">
                 <div class="card h-card">
                   <div class="h-img-wrapper">
-                    <% if !eventpost.mainimage.blank? %>
-                    <img class="card-img-top h-img" src="<%= eventpost.mainimage %>" alt="Card image cap">
+                    <% if !restaurant.image.blank? %>
+                    <img class="card-img-top h-img" src="<%= restaurant.image %>" alt="Card image cap">
                   <% else %>
                     <%= image_tag("placeholder_fest.jpeg", class: "card-img-top h-img") %>
                   <% end %>
                     
                   </div>
                   <div class="card-body h-card-body">
-                    <h5 class="h-card-title" style="color:#09083a;"><%= eventpost.title %></h5>
-                    <p class="h-card-text" style="color:#000000;"><%= eventpost.host %></p>
-                    <p class="h-card-text" style="color:#000000;"> <%= eventpost.runtime %></p>
-                    <div href="#" class="btn h-more">MORE</div>
+                    <h5 class="h-card-title" style="color:#09083a;"><%= restaurant.name %></h5>
+                    <p class="h-card-text" style="color:#000000;"><%= restaurant.location %></p>
+                    <p class="h-card-text" style="color:#000000;"> <%= restaurant.foodtype %></p>
                   </div>
                 </div>
               </a>
@@ -36,9 +33,8 @@
       </div>
   <br><br>
 
-  <%= paginate @eventposts, window: 2 %>
+  <%= paginate @restaurants, window: 2 %>
 
 
 
 </div>
-

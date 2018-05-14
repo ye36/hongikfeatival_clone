@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119153385-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-119153385-1');
+  </script>
+  
   <title>Wow festival</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -13,7 +24,7 @@
   <meta property="og:image" content="http://www.hongikfestival.com/assets/home-01-1f05c04b216a98e50a6171164a4e8e1367dcb070a0bfb164de184816392478b8.jpg">
   <meta name="keywords" content="홍익대, 홍대축제, 대학축제, 대학교, 멋쟁이사자처럼, 홍대멋사">
   <meta property="og:description" content="홍익대 축제정보를 한눈에 확인하세요! ">  
-  
+  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=jPr3uRFhGyycpdXUHajN&submodules=geocoder"></script>
 </head>
 
 
@@ -42,7 +53,7 @@
                 <a class="nav-link h-menu-list" href="/home/info">축제정보</a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link h-menu-list" href="#">주점정보</a>
+                <a class="nav-link h-menu-list" href="/restaurants">주변맛집</a>
               </li>
               <li class="nav-item">
                 <a href="/fleemarkets" class="nav-link h-menu-list">플리마켓</a>

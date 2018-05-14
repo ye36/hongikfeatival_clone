@@ -6,7 +6,7 @@ class EventpostsController < ApplicationController
   # GET /eventposts.json
   def index
 
-    @eventposts = Eventpost.page(params[:page]).per(8)
+    @eventposts = Eventpost.order(created_at: :DESC).page(params[:page]).per(8)
   end
 
   # GET /eventposts/1
@@ -75,7 +75,10 @@ class EventpostsController < ApplicationController
       params.require(:eventpost).permit(:title, :host, :contents, :runtime, :location, :mainimage, :image2, :image3,:user_id)
     end
     def is_owner?
-        redirect_to @eventpost unless current_user == @eventpost.user
+      if(current_user == @eventpost.user || current_user.id==1 || current_user.id==2 || current_user.id==3 || current_user.id==4 || current_user.id==5 || current_user.id==6 || current_user.id==7 || current_user.id==8 )      
+      else
+        redirect_to @eventpost  
+      end
     end    
     def log_in? #로그인 해야 새로만들기 창 드르가게 해줄거야
         

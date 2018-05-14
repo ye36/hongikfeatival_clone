@@ -10,13 +10,22 @@
 </div> 
 
 <div class="container">
-            <%= link_to label_tag("주인을 찾아요!"), lostposts_path(:goal => "주인을 찾아요") %>
-            <%= link_to label_tag("물건을 찾아요!"), lostposts_path(:goal => "물건을 찾아요") %>
-            <hr>
-            <%= link_to label_tag("휴대폰"), lostposts_path(:group => "휴대폰") %>
-            <%= link_to label_tag("지갑"), lostposts_path(:group => "지갑") %>
-            <%= link_to label_tag("가방"), lostposts_path(:group => "가방") %>
-            <%= link_to label_tag("기타"), lostposts_path(:group => "기타") %>
+   
+        <form action="/lostposts">
+            선택해주세요!------> 
+            <span class="check_0" id="check_1" onclick="check_1()">주인을 찾아요!</span>
+            <span class="check_0" id="check_2" onclick="check_2()">물건을 찾아요!</span>
+            <br>
+            선택해주세요!------> 
+            <span class="check_0" id="check_3" onclick="check_3()">휴대폰</span>
+            <span class="check_0" id="check_4" onclick="check_4()">지갑</span>
+            <span class="check_0" id="check_5" onclick="check_5()">가방</span>
+            <span class="check_0" id="check_6" onclick="check_6()">기타</span>
+            <input id="hidden-1" type="hidden" name="goal" value="주인을 찾아요"></input>
+            <input id="hidden-2" type="hidden" name="group" value="물건을 찾아요"></input>
+            <br><br>
+        <button type ="submit" value="submit">조회하기</button>
+        </form>
         <table class="table" style="margin-top:50px;">
           <tbody>
             <% @lostposts.each do |post| %>
@@ -64,6 +73,11 @@
 </section>
 
 <style>
+.check_0{
+    cursor: pointer !important;
+}
+
+
 img{
     max-width:100%;
     height:auto;
@@ -307,3 +321,100 @@ td{
       padding:5px;
     }
 </style>
+
+<script>
+function check_1(){
+    var hidden_1 = document.getElementById('hidden-1');
+    hidden_1.setAttribute('value', '주인을 찾아요');
+    var check_1 = document.getElementById('check_1');
+    var check_2 = document.getElementById('check_2');
+    var check_3 = document.getElementById('check_3');
+    var check_4 = document.getElementById('check_4');
+    var check_5 = document.getElementById('check_5');
+    var check_6 = document.getElementById('check_6');
+    check_1.style.color = "gray";
+    check_2.style.color = "black";
+
+
+}
+
+function check_2(){
+    var hidden_2 = document.getElementById('hidden-1');
+    hidden_2.setAttribute('value', '물건을 찾아요'); 
+    var check_1 = document.getElementById('check_1');
+    var check_2 = document.getElementById('check_2');
+    var check_3 = document.getElementById('check_3');
+    var check_4 = document.getElementById('check_4');
+    var check_5 = document.getElementById('check_5');
+    var check_6 = document.getElementById('check_6');    
+    check_1.style.color = "black";
+    check_2.style.color = "gray";
+
+
+}
+function check_3(){
+    var hidden_3 = document.getElementById('hidden-2');
+    hidden_3.setAttribute('value', '휴대폰');
+    var check_1 = document.getElementById('check_1');
+    var check_2 = document.getElementById('check_2');
+    var check_3 = document.getElementById('check_3');
+    var check_4 = document.getElementById('check_4');
+    var check_5 = document.getElementById('check_5');
+    var check_6 = document.getElementById('check_6');    
+
+    check_3.style.color = "gray";
+    check_4.style.color = "black";
+    check_5.style.color = "black";
+    check_6.style.color = "black";
+    
+}
+function check_4(){
+    var hidden_4 = document.getElementById('hidden-2');
+    hidden_4.setAttribute('value', '지갑'); 
+    var check_1 = document.getElementById('check_1');
+    var check_2 = document.getElementById('check_2');
+    var check_3 = document.getElementById('check_3');
+    var check_4 = document.getElementById('check_4');
+    var check_5 = document.getElementById('check_5');
+    var check_6 = document.getElementById('check_6');    
+ 
+    check_3.style.color = "black";
+    check_4.style.color = "gray";
+    check_5.style.color = "black";
+    check_6.style.color = "black";
+ 
+}
+function check_5(){
+    var hidden_5 = document.getElementById('hidden-2');
+    hidden_5.setAttribute('value', '가방'); 
+    var check_1 = document.getElementById('check_1');
+    var check_2 = document.getElementById('check_2');
+    var check_3 = document.getElementById('check_3');
+    var check_4 = document.getElementById('check_4');
+    var check_5 = document.getElementById('check_5');
+    var check_6 = document.getElementById('check_6');    
+
+    check_3.style.color = "black";
+    check_4.style.color = "black";
+    check_5.style.color = "gray";
+    check_6.style.color = "black";
+   
+}
+function check_6(){
+    var hidden_6 = document.getElementById('hidden-2');
+    hidden_6.setAttribute('value', '기타'); 
+    var check_1 = document.getElementById('check_1');
+    var check_2 = document.getElementById('check_2');
+    var check_3 = document.getElementById('check_3');
+    var check_4 = document.getElementById('check_4');
+    var check_5 = document.getElementById('check_5');
+    var check_6 = document.getElementById('check_6');    
+
+    check_3.style.color = "black";
+    check_4.style.color = "black";
+    check_5.style.color = "black";
+    check_6.style.color = "gray";
+
+}
+</script>
+
