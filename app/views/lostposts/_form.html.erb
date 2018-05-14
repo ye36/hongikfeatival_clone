@@ -34,8 +34,8 @@
 
 <div class="container newlostform">
   <%= bootstrap_form_for @lostpost do |f| %>
-      <%= f.text_field :title, label: "제목", placeholder: "ex)당신의 지갑을 가지고있습니다." %>
-      <%= f.select :goal, [["주인을 찾아요", "주인을 찾아요"], ["물건을 찾아요!", "물건을 찾아요"]], { label: "목적을 선택해주세요!" }, { class: "selectpicker",  wrapper: { class: 'has-warning', data: { foo: 'bar' } } } %>
+      <%= f.text_field :title, label: "제목", placeholder: "ex)당신의 지갑을 가지고있습니다." , :required => true%>
+      <%= f.select :goal, [["주인을 찾아요", "주인을 찾아요"], ["물건을 찾아요!", "물건을 찾아요"]], { label: "목적을 선택해주세요!" }, { class: "selectpicker ",  wrapper: { class: 'has-warning', data: { foo: 'bar' } } } %>
       <%= f.select :group, [["휴대폰", "휴대폰"], ["지갑", "지갑"], ["가방", "가방"], ["기타", "기타"]], { label: "목적을 선택해주세요!" }, { class: "selectpicker",  wrapper: { class: 'has-warning', data: { foo: 'bar' } } } %>    
       <%= f.text_field :location, label: "습득위치 or 분실위치", placeholder: "ex)컴공주점..." %>
       <%= f.text_area :content, label: "내용", class: "tinymce", rows: 15, cols: 120, placeholder: "분실물의 정보, 연락처 등 알려주세요!" %>
@@ -44,3 +44,4 @@
       <%= f.submit %>
   <% end %>
 </div>
+

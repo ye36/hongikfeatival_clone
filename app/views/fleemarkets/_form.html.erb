@@ -3,20 +3,22 @@
 <div class="container newlostform">
   <%= bootstrap_form_for @fleemarket do |f| %>
       <%= f.hidden_field :user_id, value: current_user.id %>
-      <%= f.text_field :name, label: "마켓이름" %>
-      <%= f.text_field :category, label: "상품 종류", placeholder: "ex) 귀걸이, 도자기, 휴대폰케이스" %>
-      <%= f.text_field :time,    label: "운영 시간", placeholder: "ex) 10:00 - 16:00"%>
-      <%= f.text_field :price, label: "가격대", placeholder: "ex) 0.5 - 2.0" %>
-      <%= f.text_field :location, label: "마켓위치" %>
-      <%= f.text_area :explain, label: "마켓을 소개해주세요!"%>
+      <%= f.text_field :name, label: "마켓이름", :required => true %>
+      <%= f.text_field :category, label: "상품 종류", placeholder: "ex) 귀걸이, 도자기, 휴대폰케이스" ,:required => true%>
+      <%= f.text_field :time,    label: "운영 시간", placeholder: "ex) 10:00 - 16:00",:required => true%>
+      <%= f.text_field :price, label: "가격대", placeholder: "ex) 0.5 - 2.0",:required => true %>
+      <%= f.text_field :location, label: "마켓위치" ,:required => true%>
+      <%= f.text_area :explain, label: "마켓을 소개해주세요!",:required => true%>
       <%= f.file_field :mainimage,label: "대표사진 선택!  ", accept: 'image/png,image/gif,image/jpeg' %>
       <%= f.file_field :image2,label: "세부사진 선택!   " ,accept: 'image/png,image/gif,image/jpeg' %>
       <%= f.file_field :image3,label: "세부사진 하나더!  ",accept: 'image/png,image/gif,image/jpeg' %>
       <div class="h-container">
         <div style="margin-top:40px;"></div>
-      <button type="submit" class="btn btn-secondary">마켓등록</button>
+      <button type="submit" class="btn btn-secondary" id="marketenroll">마켓등록</button>
       </div>
       <div style="margin-top:25px;"></div>
   <% end %>
 </div>
 </div>
+
+

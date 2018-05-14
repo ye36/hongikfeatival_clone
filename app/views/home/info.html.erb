@@ -1,194 +1,111 @@
-<div class="ban4" id="ban4"></div>
+<div class="ban4 ban" id="ban4"></div>
+<div class="lineuptext"><strong>축제 라인업</strong></div> 
 
 
-    
-</div>
-<h1>라인업</h1>
-<div class='h-container'>
-  <p id="notice"><%= notice %></p>
-  
-  
-<div class="row">
- <div class="card col-12" style=" background-color:#f9f9f9; margin-top: 50px; ">
-  <div class="card-body" style="border-bottom:1px solid #e0e0e0 ;    ">
-   <div class="row">
-    <div class=" col-xl-2"></div>
-    <div class="col-xs-12 col-xl-4"><img class='image1' src="<%= @fleemarket.mainimage.main %>"></div>
+<div class='h-container' style="margin-top:40px;">
+<div class="lineupday"><strong>5/16</strong></div> 
 
-    <div class=" col-xl-5">
-     <p>
-      <div style="margin-top: 50px;"></div>
-      <div class="h-container">
-       <div style="border: 2px solid;">
-        <div class="j-line">
-         <strong>
-          <%= @fleemarket.name %>
-          </strong>
-       </div>
-       </div>
-       <hr>
-       </div>
-      
-     </p>
-   
-     
-     <div style="padding-left:50px;padding-right:50px;margin-top: 30px;">
-    
-  <div class="row">
-   <div class="col-xl-1"></div>
-   <div class="col col-xs-3 col-xl-4">
-    <font size="5"> <strong>판매 제품</strong>
-   </div>
-   <div class="col col-xs-9 col-xl-7">
-    <%= @fleemarket.category %></font>
-   </div>
-  </div>
   
-  <div class="row">
-   <div class="col-xl-1"></div>
-   <div class="col col-xs-3 col-xl-4">
-    <font size="5"> <strong>운영 시간</strong>
-   </div>
-   <div class="col col-xs-9 col-xl-7">
-    <%= @fleemarket.time %></font>
-   </div>
-  </div>
-  
-  <div class="row">
-   <div class="col-xl-1"></div>
-   <div class="col col-sm-3 col-xl-4">
-     <font size="5"> <strong>가격대</strong>
-   </div>
-   <div class="col col-sm-9 col-xl-7">
-    <%= @fleemarket.price %></font>
-   </div>
-  </div>
-  
-  <br></br>
-  
-  <div class="row">
-   <div class="col-xl-1"></div>
-    <div class=" col-sm-3 col-xl-4">
-     <font size="5"> <strong>소개</strong>
-    </div>
-    <div class=" col-sm-9 col-xl-7">
-     <%= @fleemarket.explain %></font>
-    </div>
-  </div>
-  
-  <br></br>
-  
-  <div class="row">
-   <div class="col-xl-1"></div>
-   <div class="col col-sm-3 col-xl-4">
-   <font size="5"> <strong>위치</strong>
-   </div>
-   <div class="col col-sm-9 col-xl-7">
-    <%= @fleemarket.location %></font>
-   </div>
-  </div>
-  <div style="margin-bottom:50px"></div>
-  </div>
-  </div>
-  </div>
-  </div>
-  
- 
-  
-</div> 
-
-</div>
-
-
-<div class="middlemargin"></div>
-
-<div class="row">
-<div class="card col-12" style="margin-top:10px; background-color:#f9f9f9; padding:10px;">
- <div class="card-body" style="border-bottom:1px solid #e0e0e0 ; ">
-
-<div class="row">
- <div class="col-xl-4"></div>
-  <div class="col-xl-4">
-   <div style="margin-top:10px;"></div>
-      <div style="border: 2px solid;">
-         <div class="h-container">
+<br><br>
+      <div class="row", >
           
-            <div class="j-line"><strong>마켓사진</strong></div>
-        </div>
-      </div>
-    </div>
-  <div class="col-xl-4"></div>
-</div>
- 
-
-<hr>
-<div style="margin-top:30px;"></div>
-<div class="row">
- 
-     <div class=" col-xl-2"></div>
-      <div class="col-sm-12 col-xl-4 " >
-        <div class="card">
-                <div class="h-img-wrapper">
-                    <%= image_tag "home-01.jpg", class: "card-img-top h-img" %>
-                    <%= image_tag("placeholder_fest.jpeg", class: "card-img-top h-img") %>
-                </div>
-        </div>
-      </div>
-     </div>
-    
-      <div class="col-sm-12 col-xl-4 " >
-         <div class="h-img-wrapper">
-                    <%= image_tag "home-01.jpg", class: "card-img-top h-img" %>
-                    <%= image_tag("placeholder_fest.jpeg", class: "card-img-top h-img") %>
-         </div>
-      </div>    
-    
-    <div class=" col-xl-2"></div>
-    </div><div style="margin-bottom:40px;"></div>
-</div>
-  
-    
-
-
-    </div><div style="margin-bottom:20px;"></div>
-    </div> 
-    </div>
-    
-    
-      
- 
-  
-  <div class="middlemargin"></div>
-  <div style="text-align:center;">
-   <font size="4">
-   <%= link_to '삭제하기', fleemarket_path(@fleemarket), method:"delete"%> |
-   <%= link_to '수정하기', edit_fleemarket_path(@fleemarket) %> |
-   <%= link_to '뒤로가기', fleemarkets_path %>
-   </font>
-  </div> 
-  <div style="margin-bottom: 50px;"></div>
-</div> 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <!--<br><br>
-      <div class="row">
+         <div class="col-sm-12 col-md-6 col-xl-3"></div>   
+          
           <div class="col-sm-12 col-md-6 col-xl-3 h-card">
               <div class="card">
                 <div class="h-img-wrapper">
-                    <%= image_tag "home-01.jpg", class: "card-img-top h-img" %>
-                    <%= image_tag("placeholder_fest.jpeg", class: "card-img-top h-img") %>
+                    <%= image_tag "line_up-01-min.png", class: "card-img-top h-img" %>
                 </div>
               </div>
           </div>
+          
+          <div class="col-sm-12 col-md-6 col-xl-3 h-card">
+              <div class="card">
+                <div class="h-img-wrapper">
+                    <%= image_tag "line_up-02-min.png", class: "card-img-top h-img" %>
+                </div>
+              </div>
+          </div>
+          
+        </div>
+          
+          
+<br><br><br><br>
 
-      </div>-->
+<div class="lineupday"><strong>5/17</strong></div>        
+        
+<br><br> 
+        <div class="row", >
+                
+          <div class="col-sm-12 col-md-6 col-xl-3"></div>   
+          
+          <div class="col-sm-12 col-md-6 col-xl-3 h-card">
+              <div class="card">
+                <div class="h-img-wrapper">
+                    <%= image_tag "line_up-03-min.png", class: "card-img-top h-img" %>
+                </div>
+              </div>
+          </div>
+          
+          <div class="col-sm-12 col-md-6 col-xl-3 h-card">
+              <div class="card">
+                <div class="h-img-wrapper">
+                    <%= image_tag "line_up-04-min.png", class: "card-img-top h-img" %>
+                </div>
+              </div>
+          </div>
+        </div>
+        
+        
+        
+<br><br><br><br>
+<div class="lineupday"><strong>5/18</strong></div>         
+<br><br> 
+       <div class="row", >
+          <div class="col-sm-12 col-md-6 col-xl-3 h-card">
+              <div class="card">
+                <div class="h-img-wrapper">
+                    <%= image_tag "line_up-05-min.png", class: "card-img-top h-img" %>
+                </div>
+              </div>
+          </div>
+          
+          <div class="col-sm-12 col-md-6 col-xl-3 h-card">
+              <div class="card">
+                <div class="h-img-wrapper">
+                    <%= image_tag "line_up-06-min.png", class: "card-img-top h-img" %>
+                </div>
+              </div>
+          </div>
+          
+          <div class="col-sm-12 col-md-6 col-xl-3 h-card">
+              <div class="card">
+                <div class="h-img-wrapper">
+                    <%= image_tag "line_up-07-min.png", class: "card-img-top h-img" %>
+                </div>
+              </div>
+          </div>
+          
+          <div class="col-sm-12 col-md-6 col-xl-3 h-card">
+              <div class="card">
+                <div class="h-img-wrapper">
+                    <%= image_tag "line_up-08-min.png", class: "card-img-top h-img" %>
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+      </div>
       
+      <br><br>
+      <div class="row">
+          
+      </div>
+      
+      <br><br>
+      <div class="row">
+          
+
+      </div>
       
