@@ -4,7 +4,9 @@
   <div class="card-body">
    <div class="row">
     <div class=" col-xl-2"></div>
-    <div class="col-xs-12 col-xl-4 h-img-wrapper"><img class="h-img" src="<%= @eventpost.mainimage %>"></div>
+    <div class="col-xs-12 col-xl-4 h-main-img-wrapper">
+      <img class="h-img" src="<%= @eventpost.mainimage %>">
+    </div>
 
     <div class=" col-xl-5">
      <p>
@@ -23,14 +25,14 @@
      </p>
    
      
-     <div style="padding-left:50px;margin-top: 30px;">
+     <div style="padding-left:20px;margin-top: 30px;">
     
   <div class="row">
    <div class="col-xl-1"></div>
-   <div class="col col-xs-3 col-xl-4">
+   <div class="col col-xs-1 col-xl-4">
     <font size="5"> <strong>주최</strong>
    </div>
-   <div class="col col-xs-9 col-xl-7">
+   <div class="col col-xs-10 col-xl-7">
     <%= @eventpost.host %></font>
    </div>
   </div>
@@ -61,7 +63,7 @@
   
   <div class="row">
    <div class="col-xl-1"></div>
-   <div class="col col-sm-3 col-xl-4">
+   <div class="col-sm-3 col-xl-4">
    <font size="5"> <strong>소개</strong>
    </div>
    <div class="col col-sm-9 col-xl-7">
@@ -94,7 +96,7 @@
       <div style="border: 2px solid;">
          <div class="h-container">
           
-            <div class="j-line"><strong>마켓사진</strong></div>
+            <div class="j-line"><strong>홍보사진</strong></div>
         </div>
       </div>
     </div>

@@ -121,6 +121,13 @@
     border-radius: 3px;
     // margin: 5px;
 }
+.h-main-img-wrapper {
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    padding-top: 35%;
+    border-radius: 3px;
+}
 @media screen and (max-width:799px){
     .h-show-img{
         background: #fff;
@@ -129,6 +136,11 @@
         padding-top: 100%;
         border-radius: 3px;
     }
-    .show-img-container {
+    .h-main-img-wrapper {
+        background: #fff;
+        position: relative;
+        overflow: hidden;
+        padding-top: 100%;
+        border-radius: 3px;
     }
 }
