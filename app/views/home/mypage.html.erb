@@ -1,0 +1,70 @@
+<div class="wrappersn" id="wrappersn">
+      <div class="row">
+        <div class="col-12 col-md-3 col-lg-4"></div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <br><br>
+          <div class="container">
+              <div class="card opacity" style="margin-top:200px;">
+                  <div class="card-body">  
+                    <h2><%=current_user.name %>님 마이페이지 ٩(•̤̀ᵕ•̤́๑)૭✧</h2>
+                    <div  style="margin-top:100px;">
+                      
+                        <a href="../users/edit" >회원 정보 수정</a>
+                        <br>
+                    
+                        <br>
+                        <a href="/users" data-confirm="정말 탈퇴하시겠습니까?(´•ω•̥`)" data-target="<%= current_user.id %>" data-method="delete">회원 탈퇴</a>
+                        
+                      
+                      
+                    </div>
+                  </div>
+              </div>    
+          </div>
+        </div>
+</div>
+<style>
+.opacity {
+  opacity: 0.85;
+}
+.top{
+  padding-top:20px;
+  padding-bottom:0px;  
+}
+.font22{
+  font-size:14px;
+}
+.loger1{
+  width:500px;
+}
+.btn-primary{
+    background-color:black;
+    border: 0.3px solid black;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+.fbbt{
+  opacity:0.8;
+}
+.fbbt:hover{
+  opacity:1;
+}
+.bt1{
+  width:240px;
+}
+.sign_up_p{
+  color:black;
+  font-size:16px;
+}
+.sign_up_link{
+  color:black;
+  font-weight:bold;
+}
+.sign_up_link:hover{
+  color:black;
+  font-weight:bold;
+}
+</style>

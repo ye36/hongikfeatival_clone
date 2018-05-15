@@ -7,7 +7,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.order(created_at: :DESC).page(params[:page]).per(8)
+        @restaurants = Restaurant.order('RANDOM()').page(params[:page]).per(8)
   end
 
   # GET /restaurants/1
