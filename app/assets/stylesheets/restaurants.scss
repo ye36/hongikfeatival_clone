@@ -5,3 +5,11 @@
 .restaurant-info{
     margin: 1rem 0;
 }
+.h-map{
+    margin-top: 4.5rem;
+}
+@media screen and (max-width:799px){
+    .h-map{
+        margin-top: 0;
+    }
+}
