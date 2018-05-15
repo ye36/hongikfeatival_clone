@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]  
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
-  before_action :is_owner?, only: [:edit, :update, :destroy]
+  before_action :is_owner?, only: [:new, :create, :edit, :update, :destroy]
   
   # GET /restaurants
   # GET /restaurants.json
