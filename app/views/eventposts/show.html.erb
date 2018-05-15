@@ -1,86 +1,152 @@
-<div style=" background-color:#f9f9f9; margin-top: 4rem; ">
-  <div class="h-container">
-    <div class="row show-img-container">
-      <div class="col-sm-12 col-xl-6 h-show-img">
-        <img class="h-img" src="<%= @eventpost.mainimage %>"/>
-      </div>
-      <div class="col-sm-12 col-xl-6 h-show-text-wrapper">
-        <div class="col-sm-12 eventpost_show_text">
-          <span class="h-show-title">
-            <%= @eventpost.title %>
-          </span>
-        </div>
+
+<div class="row">
+ <div class="card col-12" style=" background-color:#f9f9f9; margin-top: 50px;">
+  <div class="card-body" style="border-bottom:1px solid #e0e0e0 ;    ">
+   <div class="row">
+    <div class=" col-xl-2"></div>
+    <div class="col-xs-12 col-xl-4"><img class='image1' src="<%= @eventpost.mainimage %>"></div>
+
+    <div class=" col-xl-5">
+     <p>
+      <div style="margin-top: 50px;"></div>
+      <div class="h-container">
+       <div style="border: 2px solid;">
+        <div class="j-line">
+         <strong>
+          <%= @eventpost.title %>
+          </strong>
+       </div>
+       </div>
+       <hr>
+       </div>
       
-        <div class="col-sm-12 h-show-text-line">
-          <div class="row">
-            <div class="col col-sm-2 col-xl-3 eventpost_show_text">
-              <div>주최</div>
-            </div>
-            <div class="col col-sm-10 col-xl-9">
-              <%= @eventpost.host %>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 h-show-text-line">
-          <div class="row">
-            <div class="col col-sm-2 col-xl-3 eventpost_show_text">
-              <div>위치</div>
-            </div>
-            <div class="col col-sm-10 col-xl-9">
-              <%= @eventpost.location %>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 h-show-text-line">
-          <div class="row">
-            <div class="col col-sm-2 col-xl-3 eventpost_show_text">
-              <div>시간</div>
-            </div>
-            <div class="col col-sm-10 col-xl-9">
-              <%= @eventpost.runtime %>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 h-show-text-line">
-          <div class="row">
-            <div class="col col-sm-2 col-xl-3 eventpost_show_text">
-              <div>소개</div>
-            </div>
-            <div class="col col-sm-10 col-xl-9">
-              <%= @eventpost.contents %>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      
-      <div class="col-sm-12">
-        <div class="row show-sub-img">
-          <% if @eventpost.image2.present? %>
-            <div class="col col-sm-6 col-xl-6 h-sub-img-wrapper" >
-              <img class="h-img" src="<%= @eventpost.image2 %>" />
-            </div>    
-          <% else %>
-          <% end %>
-          <% if @eventpost.image3.present? %>
-            <div class="col col-sm-6 col-xl-6 h-sub-img-wrapper" >
-              <img class="h-img" src="<%= @eventpost.image3 %>" />
-            </div>    
-          <% else %>  
-          <% end %>
-        </div>
-      </div>
-      
-      <div class="col-sm-12 show-post-nav" >
-        <font size="4">
-        <%= link_to '삭제하기', eventpost_path(@eventpost), method:"delete"%> |
-        <%= link_to '수정하기', edit_eventpost_path(@eventpost) %> |
-        <%= link_to '뒤로가기', eventposts_path %>
-        </font>
-      </div>
-      
-        
+     </p>
+   
+     
+     <div style="padding-left:50px;padding-right:50px;margin-top: 30px;">
+    
+  <div class="row">
+   <div class="col-xl-1"></div>
+   <div class="col col-xs-3 col-xl-4">
+    <font size="5"> <strong>주최</strong>
+   </div>
+   <div class="col col-xs-9 col-xl-7">
+    <%= @eventpost.host %></font>
+   </div>
+  </div>
+  
+  <div class="row">
+   <div class="col-xl-1"></div>
+   <div class="col col-xs-3 col-xl-4">
+    <font size="5"> <strong>위치</strong>
+   </div>
+   <div class="col col-xs-9 col-xl-7">
+    <%= @eventpost.location %></font>
+   </div>
+  </div>
+  
+  <div class="row">
+   <div class="col-xl-1"></div>
+   <div class="col col-sm-3 col-xl-4">
+     <font size="5"> <strong>시간</strong>
+   </div>
+   <div class="col col-sm-9 col-xl-7">
+    <%= @eventpost.runtime %></font>
+   </div>
+  </div>
+  
+  <br></br>
+  
+  <div class="row">
+   <div class="col-xl-1"></div>
+    <div class=" col-sm-3 col-xl-4">
+     <font size="5"> <strong>소개</strong>
+    </div>
+    <div class=" col-sm-9 col-xl-7">
+     <%= @eventpost.contents %></font>
     </div>
   </div>
+  
+  <br></br>
+  
+  
+  <div style="margin-bottom:50px"></div>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+ 
+  
+</div> 
 
 </div>
+
+
+<div class="middlemargin"></div>
+
+<div class="row">
+<div class="card col-12" style="margin-top:10px; background-color:#f9f9f9; padding:10px;">
+ <div class="card-body" style="border-bottom:1px solid #e0e0e0 ; ">
+
+<div class="row">
+ <div class="col-xl-4"></div>
+  <div class="col-xl-4">
+   <div style="margin-top:10px;"></div>
+      <div style="border: 2px solid;">
+         <div class="h-container">
+          
+            <div class="j-line"><strong>사진</strong></div>
+        </div>
+      </div>
+    </div>
+  <div class="col-xl-4"></div>
+</div>
+ 
+
+<hr>
+<div style="margin-top:30px;"></div>
+<div class="row">
+ 
+     <div class=" col-xl-2"></div>
+  <% if @eventpost.image2.present? %>
+      <div class="col-sm-12 col-xl-4 " >
+        <img class="image2" src="<%= @eventpost.image2 %>" />
+      </div>    
+    <% else %>
+    <% end %>
+    
+    <% if @eventpost.image3.present? %>
+      <div class="col-sm-12 col-xl-4 " >
+        <img class="image3" src="<%= @eventpost.image3 %>" />
+      </div>    
+    <% else %>  
+    <% end %>
+    <div class=" col-xl-2"></div>
+    </div><div style="margin-bottom:40px;"></div>
+    </div>
+  
+    
+
+
+    </div><div style="margin-bottom:20px;"></div>
+    </div> 
+    </div>
+    
+    
+      
+ 
+  
+  <div class="middlemargin"></div>
+  <div style="text-align:center;">
+   <font size="4">
+   <%= link_to '삭제하기', fleemarket_path(@eventpost), method:"delete"%> |
+   <%= link_to '수정하기', edit_fleemarket_path(@eventpost) %> |
+   <%= link_to '뒤로가기', fleemarkets_path %>
+   </font>
+  </div> 
+  <div style="margin-bottom: 50px;"></div>
+</div> 
+
+
+

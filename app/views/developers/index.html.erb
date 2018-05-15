@@ -1,0 +1,10 @@
+
+
+<div class="ban4 ban" id="ban4">
+  <% if user_signed_in?%>
+    <%= link_to '게시글 작성하기', new_eventpost_path, class: "newbtn" %>
+  <% else %>
+    <%= link_to '게시글 작성하기', new_user_session_path, class: "newbtn" %>
+  <% end %>
+</div>
+
