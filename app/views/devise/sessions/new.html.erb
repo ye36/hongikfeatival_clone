@@ -39,7 +39,12 @@
                             <% end %>
                         <br>
                         <p class="sign_up_p">아직 가입하지 않으셨다면? <a class="sign_up_link" href="/users/sign_up">가입하기</a></p>
-                        </div>    
+                        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                        <%= link_to "비밀번호 찾기", new_password_path(resource_name) %><br />
+                         <% end -%>
+                        </div>
+                        
+                   
                   </div>
                   <div class="col-12 col-md-3 col-lg-4"></div>
               </div>    

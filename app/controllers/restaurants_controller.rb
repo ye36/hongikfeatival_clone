@@ -1,7 +1,8 @@
 class RestaurantsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]  
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
-  before_action :is_owner?, only: [:new, :create, :edit, :update, :destroy]
+  before_action :is_owner?, only: [:edit, :update, :destroy]
+  before_action :is_admin?, only: [:create]  
   
   # GET /restaurants
   # GET /restaurants.json
@@ -75,9 +76,16 @@ class RestaurantsController < ApplicationController
     end
 
     def is_owner?
-      if(current_user == @restaurant.user || current_user.id==1 || current_user.id==2 || current_user.id==3 || current_user.id==4 || current_user.id==5 || current_user.id==6 || current_user.id==7 || current_user.id==8 )      
+      if( current_user == @restaurant.user )      
       else
         redirect_to @restaurant  
       end
-    end        
+    end       
+    
+    def is_admin?
+      if( current_user.id==1 || current_user.id==2 || current_user.id==3 || current_user.id==4 || current_user.id==5 || current_user.id==6 || current_user.id==7 || current_user.id==8 )      
+      else
+        redirect_to '/restaurants'
+      end
+    end  
 end

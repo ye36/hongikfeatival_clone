@@ -109,9 +109,6 @@ class LostpostsController < ApplicationController
     end
     
     def is_owner?
-      if(current_user == @lostpost.user || current_user.id==1 || current_user.id==2 || current_user.id==3 || current_user.id==4 || current_user.id==5 || current_user.id==6 || current_user.id==7 || current_user.id==8 )      
-      else
-        redirect_to @lostpost  
-      end
+        redirect_to @lostpost unless current_user == @lostpost.user
     end    
 end
