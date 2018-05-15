@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'home/info'
   get 'home/priv'
   get 'home/mypage'
+  get 'developers/index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

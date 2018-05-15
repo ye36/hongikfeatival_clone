@@ -190,10 +190,10 @@ background: asset_url('home-01.jpg');
 }
 
 .ban3{
-    background: asset_url('banner-03-min.png');
+    background: asset_url('banner-09.jpg');
 }
     
-.ban4{ background: asset_url('banner-09.png');
+.ban4{ background: asset_url('banner-01.png');
 }
 
 
@@ -215,6 +215,9 @@ background: asset_url('home-01.jpg');
     background: asset_url('banner-04-min.png');
 }
 
+.ban6{
+    background: asset_url('home-03-min.png');
+}
 #ban4{
     background-size: cover;
     background-repeat: none;
@@ -229,6 +232,48 @@ background: asset_url('home-01.jpg');
     perspective: 400px;
     margin-bottom:20px;
 }
+
+.ban5{
+    background: asset_url('developer-01-min.png');
+}
+#ban5{
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-perspective: 400px;
+    -o-perspective: 400px;
+    perspective: 400px;
+    margin-bottom:20px;
+}
+
+
+.team{ background: asset_url('team.jpeg');}
+
+
+#team{
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-perspective: 400px;
+    -o-perspective: 400px;
+    perspective: 400px;
+    margin-bottom:20px;
+}
+
+
+
+
+
 
 
 #ban2{
@@ -271,6 +316,27 @@ background: asset_url('home-01.jpg');
     color:#ffffff;
   }
 
+.h-team-wrapper{
+    background: #fff;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 50%;
+    border-radius: 3px;
+}
+.team-img{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.team-text{
+    margin: 1rem 8rem;
+}
+
 
 @media screen and (max-width:799px){
     .navbar-light .navbar-toggler{
@@ -311,9 +377,10 @@ background: asset_url('home-01.jpg');
     .h-card{
         margin: 1rem;
     }
+    .team-text{
+        margin: 1rem 1rem;
+    }
 }
-
-
 
 
 

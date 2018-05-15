@@ -11,20 +11,21 @@
 
 <div class="container">
    
-        <form action="/lostposts">
-            선택해주세요!------> 
-            <span class="check_0" id="check_1" onclick="check_1()">주인을 찾아요!</span>
-            <span class="check_0" id="check_2" onclick="check_2()">물건을 찾아요!</span>
-            <br>
-            선택해주세요!------> 
-            <span class="check_0" id="check_3" onclick="check_3()">휴대폰</span>
-            <span class="check_0" id="check_4" onclick="check_4()">지갑</span>
-            <span class="check_0" id="check_5" onclick="check_5()">가방</span>
-            <span class="check_0" id="check_6" onclick="check_6()">기타</span>
+        <form action="/lostposts" class="form_0">
+            <div class="div_0">
+                <span class="check_0" id="check_1" onclick="check_1()">주인을 찾아요!</span>
+                <span class="check_0" id="check_2" onclick="check_2()">물건을 찾아요!</span>
+            </div>
+            <div class="div_0">
+                <span class="check_0" id="check_3" onclick="check_3()">휴대폰</span>
+                <span class="check_0" id="check_4" onclick="check_4()">지갑</span>
+                <span class="check_0" id="check_5" onclick="check_5()">가방</span>
+                <span class="check_0" id="check_6" onclick="check_6()">기타</span>
+            </div>
             <input id="hidden-1" type="hidden" name="goal" value="주인을 찾아요"></input>
             <input id="hidden-2" type="hidden" name="group" value="물건을 찾아요"></input>
-            <br><br>
-        <button type ="submit" value="submit">조회하기</button>
+            
+        <button type ="submit" value="submit" class="check_0">조회하기</button>
         </form>
         <table class="table" style="margin-top:50px;">
           <tbody>
@@ -73,8 +74,23 @@
 </section>
 
 <style>
+.div_0{
+    margin-top:1.5rem;
+    height: 3rem;
+    border-bottom:2px solid #CCCCCC;
+}
+.form_0{
+       text-align:center;
+}
 .check_0{
     cursor: pointer !important;
+    border : 2px solid gray;
+    border-radius : 7px;
+    padding:2px;
+    padding-left:10px;
+    padding-right:10px;
+
+    margin-top : 1.5rem;
 }
 
 
@@ -334,6 +350,8 @@ function check_1(){
     var check_6 = document.getElementById('check_6');
     check_1.style.color = "gray";
     check_2.style.color = "black";
+    check_1.style.background = "#CCCCCC"
+    check_2.style.background = "white"
 
 
 }
@@ -349,6 +367,8 @@ function check_2(){
     var check_6 = document.getElementById('check_6');    
     check_1.style.color = "black";
     check_2.style.color = "gray";
+    check_1.style.background = "white"
+    check_2.style.background = "#CCCCCC"
 
 
 }
@@ -366,6 +386,12 @@ function check_3(){
     check_4.style.color = "black";
     check_5.style.color = "black";
     check_6.style.color = "black";
+    check_3.style.background = "#CCCCCC"
+    check_4.style.background = "white"
+    check_5.style.background = "white"
+    check_6.style.background = "white"
+
+
     
 }
 function check_4(){
@@ -382,6 +408,10 @@ function check_4(){
     check_4.style.color = "gray";
     check_5.style.color = "black";
     check_6.style.color = "black";
+    check_3.style.background = "white"
+    check_4.style.background = "#CCCCCC"
+    check_5.style.background = "white"
+    check_6.style.background = "white"
  
 }
 function check_5(){
@@ -398,6 +428,10 @@ function check_5(){
     check_4.style.color = "black";
     check_5.style.color = "gray";
     check_6.style.color = "black";
+    check_3.style.background = "white"
+    check_4.style.background = "white"
+    check_5.style.background = "#CCCCCC"
+    check_6.style.background = "white"
    
 }
 function check_6(){
@@ -414,6 +448,10 @@ function check_6(){
     check_4.style.color = "black";
     check_5.style.color = "black";
     check_6.style.color = "gray";
+    check_3.style.background = "white"
+    check_4.style.background = "white"
+    check_5.style.background = "white"
+    check_6.style.background = "#CCCCCC"
 
 }
 </script>

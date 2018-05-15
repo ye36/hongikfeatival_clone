@@ -1,10 +1,10 @@
 
 <div class="row">
  <div class="card col-12" style=" background-color:#f9f9f9; margin-top: 50px;">
-  <div class="card-body" style="border-bottom:1px solid #e0e0e0 ;    ">
+  <div class="card-body">
    <div class="row">
     <div class=" col-xl-2"></div>
-    <div class="col-xs-12 col-xl-4"><img class='image1' src="<%= @eventpost.mainimage %>"></div>
+    <div class="col-xs-12 col-xl-4 h-img-wrapper"><img class="h-img" src="<%= @eventpost.mainimage %>"></div>
 
     <div class=" col-xl-5">
      <p>
@@ -23,7 +23,7 @@
      </p>
    
      
-     <div style="padding-left:50px;padding-right:50px;margin-top: 30px;">
+     <div style="padding-left:50px;margin-top: 30px;">
     
   <div class="row">
    <div class="col-xl-1"></div>
@@ -57,19 +57,17 @@
   
   <br></br>
   
+  
+  
   <div class="row">
    <div class="col-xl-1"></div>
-    <div class=" col-sm-3 col-xl-4">
-     <font size="5"> <strong>소개</strong>
-    </div>
-    <div class=" col-sm-9 col-xl-7">
-     <%= @eventpost.contents %></font>
-    </div>
+   <div class="col col-sm-3 col-xl-4">
+   <font size="5"> <strong>소개</strong>
+   </div>
+   <div class="col col-sm-9 col-xl-7">
+    <%= @eventpost.contents %></font>
+   </div>
   </div>
-  
-  <br></br>
-  
-  
   <div style="margin-bottom:50px"></div>
   </div>
   </div>
@@ -96,7 +94,7 @@
       <div style="border: 2px solid;">
          <div class="h-container">
           
-            <div class="j-line"><strong>사진</strong></div>
+            <div class="j-line"><strong>마켓사진</strong></div>
         </div>
       </div>
     </div>
@@ -140,13 +138,10 @@
   <div class="middlemargin"></div>
   <div style="text-align:center;">
    <font size="4">
-   <%= link_to '삭제하기', fleemarket_path(@eventpost), method:"delete"%> |
-   <%= link_to '수정하기', edit_fleemarket_path(@eventpost) %> |
-   <%= link_to '뒤로가기', fleemarkets_path %>
+   <%= link_to '삭제하기', eventpost_path(@eventpost), method:"delete"%> |
+   <%= link_to '수정하기', edit_eventpost_path(@eventpost) %> |
+   <%= link_to '뒤로가기', eventpost_path %>
    </font>
   </div> 
   <div style="margin-bottom: 50px;"></div>
 </div> 
-
-
-
