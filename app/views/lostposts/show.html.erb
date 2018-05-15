@@ -3,14 +3,10 @@
         <div class="col-0 col-lg-2"></div>
         <div class="col-12 col-lg-8"><br>
           <%= link_to "목록으로", lostposts_path,:class=>"listlink left"%>
-            <% if !user_signed_in? %> 
-            <%else%>
-              <% if current_user.id == @lostpost.user.id %>
+
                 <%= link_to image_tag("deleteiconsm.png"), lostpost_path(@lostpost), method: "delete", class: "float-right",:data => {:confirm => '진짜 지울래요?'} %>
                 <%= link_to image_tag("editiconsm.png"), edit_lostpost_path(@lostpost), class: "float-right blanker"%>
                 <br>
-              <%end%>
-            <% end %> 
                                       
           <div class="card" style="margin-top:10px; background-color:#f9f9f9;">
             <div class="card-body" style="border-bottom:1px solid #e0e0e0 ; padding-bottom:8px;padding-top:8px;">
