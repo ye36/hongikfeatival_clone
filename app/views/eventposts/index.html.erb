@@ -15,11 +15,11 @@
               <a href = "/eventposts/<%= eventpost.id %>">
                 <div class="card h-card">
                   <div class="h-img-wrapper">
-                    <% if !eventpost.mainimage.blank? %>
-                    <img class="card-img-top h-img" src="<%= eventpost.mainimage %>" alt="Card image cap">
-                  <% else %>
+                  <!--<% if !eventpost.mainimage.blank? %>-->
+                  <!--  <img class="card-img-top h-img" src="<%= eventpost.mainimage %>" alt="Card image cap">-->
+                  <!--<% else %>-->
                     <%= image_tag("placeholder_fest.jpeg", class: "card-img-top h-img") %>
-                  <% end %>
+                  <!--<% end %>-->
                     
                   </div>
                   <div class="card-body h-card-body">
